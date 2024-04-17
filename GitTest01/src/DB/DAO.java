@@ -58,7 +58,6 @@ public class DAO {
 			psmt.setInt(1, exp);
 			psmt.setInt(2, stress);
 			row = psmt.executeUpdate();
-			System.out.println("row : " + row);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -81,7 +80,6 @@ public class DAO {
 			conn();
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
-			System.out.println(rs);
 			while (rs.next()) {
 				int id = rs.getInt(1);
 				int exp = rs.getInt(2);

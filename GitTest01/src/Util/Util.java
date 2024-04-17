@@ -42,6 +42,20 @@ public class Util {
 		PrintWriter out;
 		try {
 			out = new PrintWriter(new OutputStreamWriter(System.out, "UTF-8"), true);
+			out.print(console);
+		
+			
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public static void println(String console)
+	{
+		PrintWriter out;
+		try {
+			out = new PrintWriter(new OutputStreamWriter(System.out, "UTF-8"), true);
 			out.println(console);
 		
 			

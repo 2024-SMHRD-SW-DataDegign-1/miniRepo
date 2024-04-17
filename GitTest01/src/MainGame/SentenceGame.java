@@ -66,16 +66,16 @@ public class SentenceGame {
     public void playGame(int idx)
     {
 		mSc = new Scanner(System.in);
-		Util.print("문장 : " + mAnswerList[idx]);
+		Util.println("문장 : " + mAnswerList[idx]);
 		
-		Util.print("입력 : ");
+		Util.println("입력 : ");
 		String value = mSc.next();
 		if(!mAnswerList[idx].equals(value))
 		{
 			mLife--;
 			
 		}
-		Util.print("남은 목숨 : " + mLife);
+		//Util.print("남은 목숨 : " + mLife);
     }
     
     private void showConsole()

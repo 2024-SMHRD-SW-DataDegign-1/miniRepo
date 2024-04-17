@@ -35,7 +35,7 @@ public class Story2 {
 		
 //		Util.println("경험치 \t 스트레스 \t 생성시간 \t\t 현재시간");
 //		Util.println(exp+" \t "+stress+" \t "+firstTime+" \t "+lastTime);
-//		
+		
 		
 		
 //		Scanner sc = new Scanner(System.in);

@@ -1,4 +1,5 @@
 import Game.SentenceGame;
+import Game.가위바위보;
 import Util.Util;
 
 public class Ex01 {
@@ -13,7 +14,10 @@ public class Ex01 {
 
 		//String str = "⣿⣿⣿⣿⠿⠿⠿⢿⡿⠿⠿⠿⢿⣿⣿⣿\n⣿⣿⣿⡇ ⣤⣤⣤⡇⠀⣤⣤⣤⣿⣿⣿\n⣿⣿⣿⣇ ⠉⠉⠉⡇⠀⠉⠉⠉⣿⣿⣿\n⣿⣿⣿⠿⠿⠿⠿⠀ ⠿ ⠿⠿⠿⣿⣿\n⣿⣿⣿⣤⣤⣤⠤⠤⠤⠤⢤⣤⣤⣿⣿⣿\n⣿⣿⣿⣿⠉⠀⣤⣤⣤⣤⡀⠈⢻⣿⣿⣿\n⣿⣿⣿⣿⣄⡀⠉⠙⠛⠉⠁⣠⣾⣿⣿⣿\n⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿";
 		//Util.print(str);
-		SentenceGame view = new SentenceGame();
-		view.Play();
+//		SentenceGame view = new SentenceGame();
+//		view.Play();
+		
+		가위바위보 view = new 가위바위보();
+		view.play();
 	}
 }

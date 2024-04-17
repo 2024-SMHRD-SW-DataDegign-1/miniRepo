@@ -1,4 +1,5 @@
 import Game.SentenceGame;
+import Game.UpDown;
 import Game.가위바위보;
 import Util.Util;
 
@@ -18,7 +19,7 @@ public class Ex01 {
 //		SentenceGame view = new SentenceGame();
 //		view.Play();
 		
-		가위바위보 view = new 가위바위보();
-		view.play();
+		UpDown up = new UpDown();
+		up.play();
 	}
 }

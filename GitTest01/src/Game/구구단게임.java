@@ -72,7 +72,7 @@ public class 구구단게임 {
 			int result = first * second;
 
 
-			Util.println("문제: " + first + " X " + second + " = ");
+			Util.print("문제: " + first + " X " + second + " = ");
 			int people = sc.nextInt();
 			
 			if (people == result) {

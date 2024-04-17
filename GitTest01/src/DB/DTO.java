@@ -63,4 +63,6 @@ public class DTO {
 	public void setLastTime(Date lastTime) {
 		this.lastTime = lastTime;
 	}
+	
+	
 }

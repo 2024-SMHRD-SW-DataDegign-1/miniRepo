@@ -1,5 +1,5 @@
-import Game.SentenceGame;
-import Game.가위바위보;
+import MainGame.SentenceGame;
+import MainGame.가위바위보;
 import Util.Util;
 
 
@@ -22,3 +22,5 @@ public class Ex01 {
 		view.play();
 	}
 }
+  
+                                                                                        

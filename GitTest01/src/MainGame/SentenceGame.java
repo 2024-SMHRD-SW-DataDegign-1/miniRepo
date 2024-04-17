@@ -1,8 +1,11 @@
-package Game;
+package MainGame;
 
 import java.util.Scanner;
 
 import Util.Util;
+
+
+
 
 public class SentenceGame {
 	String[] mAnswerList = {
@@ -21,7 +24,7 @@ public class SentenceGame {
 	public SentenceGame()
 	{
 		
-		mLife = 2;
+		mLife = 5;
 	}
 	
 	public boolean Play()
@@ -70,6 +73,7 @@ public class SentenceGame {
 		if(!mAnswerList[idx].equals(value))
 		{
 			mLife--;
+			
 		}
 		Util.print("남은 목숨 : " + mLife);
     }
@@ -80,27 +84,31 @@ public class SentenceGame {
     	Util.guideLine();
 		String[] str = 
 			{ 
-				"⢀⢀⢀⢀⢀⢀⢀⢀⢀⢀⢠⣴⣾⣿⣶⣶⣆⢀⢀⢀⢀⢀⢀⢀⢀⢀⢀⢀⢀",
-				"⢀⢀⢀⣀⢀⣤⢀⢀⡀⢀⣿⣿⣿⣿⣷⣿⣿⡇⢀⢀⢀⢀⣤⣀⢀⢀⢀⢀⢀",
-				"⢀⢀ ⣶⢻⣧⣿⣿⠇ ⢸⣿⣿⣿⣷⣿⣿⣿⣷⢀⢀⢀⣾⡟⣿⡷⢀⢀⢀⢀",
-				"⢀⢀⠈⠳⣿⣾⣿⣿⢀⠈⢿⣿⣿⣷⣿⣿⣿⣿⢀⢀⢀⣿⣿⣿⠇⢀⢀⢀⢀",
-				"⢀⢀⢀⢀⢿⣿⣿⣿⣤⡶⠺⣿⣿⣿⣷⣿⣿⣿⢄⣤⣼⣿⣿⡏⢀⢀⢀⢀⢀",
-				"⢀⢀⢀⢀⣼⣿⣿⣿⠟⢀⢀⠹⣿⣿⣿⣷⣿⣿⣎⠙⢿⣿⣿⣷⣤⣀⡀⢀⢀",
-				"⢀⢀⢀ ⢸⣿⣿⣿⡿⢀⢀⣤⣿⣿⣿⣷⣿⣿⣿⣄⠈⢿⣿⣿⣷⣿⣿⣷⡀⢀",
-				"⢀⢀⢀⣿⣿⣿⣿⣷⣀⣀⣠⣿⣿⣿⣿⣷⣿⣷⣿⣿⣷⣾⣿⣿⣿⣷⣿⣿⣿⣆",
-				"⣿⣿⠛⠋⠉⠉⢻⣿⣿⣿⣿⡇⡀⠘⣿⣿⣿⣷⣿⣿⣿⠛⠻⢿⣿⣿⣿⣿⣷⣦",
-				"⣿⣿⣧⡀⠿⠇⣰⣿⡟⠉⠉⢻⡆⠈⠟⠛⣿⣿⣿⣯⡉⢁⣀⣈⣉⣽⣿⣿⣿⣷",
-				"⡿⠛⠛⠒⠚⠛⠉⢻⡇⠘⠃⢸⡇⢀⣤⣾⠋⢉⠻⠏⢹⠁⢤⡀⢉⡟⠉⡙⠏⣹",
-				"⣿⣦⣶⣶⢀⣿⣿⣿⣷⣿⣿⣿⡇⢀⣀⣹⣶⣿⣷⠾⠿⠶⡀⠰⠾⢷⣾⣷⣶⣿",
-				"⣿⣿⣿⣿⣇⣿⣿⣿⣷⣿⣿⣿⣇⣰⣿⣿⣷⣿⣿⣷⣤⣴⣶⣶⣦⣼⣿⣿⣿⣷"
+					"#######  ##   ##   #####   ######   #####              #  #  #  #####   ######   ######",   
+					"##   ##  ##   ##  #######  #######  ######             #  #  # #######  #######  #######",  
+					"##       ##   ##  ##   ##       ##      ##             #  #  # ##   ##       ##       ##", 
+					"#######  #### ##  ##   ##  ######       ##            ##  #  # ##   ##  ######   ##   ##", 
+					"    ###  ##   ##  ##   ##  ##   ##      ##            ##  #  # ##   ##  ##   ##  ##   ##", 
+					"##  ###  ##   ##  #######  ##   ##      ##            ##  #  # #######  ##   ##  #######",  
+					"#######  ##   ##   #####   ##   ##      ##            ########  #####   ##   ##  ######", 
 			};
+		
+
 		String[] value = Util.setMiddle(str);			
 
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
 		System.out.println();
 		System.out.println();
 		
 		Util.print(value);
 
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
 		System.out.println();
 		System.out.println();
 		System.out.println();

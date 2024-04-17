@@ -1,7 +1,8 @@
-import Game.SentenceGame;
-import Game.구구단게임;
-//import Game.가위바위보;
+import MainGame.SentenceGame;
+import MainGame.가위바위보;
+
 import Util.Util;
+
 
 public class Ex01 {
 	public static void main(String[] args) {
@@ -21,7 +22,9 @@ public class Ex01 {
 //		가위바위보 view = new 가위바위보();
 //		view.play();
 		
-		구구단게임 g = new 구구단게임();
-		g.play();
+//		구구단게임 g = new 구구단게임();
+//		g.play();
 	}
 }
+  
+                                                                                        

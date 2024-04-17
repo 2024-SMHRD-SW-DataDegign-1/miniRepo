@@ -26,9 +26,9 @@ public class DAO {
 //			String password = "12345";
 			conn = DriverManager.getConnection(url, user, password);
 			if (conn != null) {
-				System.out.println("DB 연결 성공");
+//				System.out.println("DB 연결 성공");
 			} else {
-				System.out.println("DB 연결 실패");
+//				System.out.println("DB 연결 실패");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -65,9 +65,9 @@ public class DAO {
 			dbClose();
 		}
 		if (row > 0) {
-			System.out.println("회원정보수정 성공!😊");
+//			System.out.println("회원정보수정 성공!😊");
 		} else {
-			System.out.println("회원정보수정 실패!😢");
+//			System.out.println("회원정보수정 실패!😢");
 		}
 	}
 
@@ -98,9 +98,9 @@ public class DAO {
 			dbClose();
 		}
 		if (dto != null) {
-			System.out.println("조회 성공!😊");
+//			System.out.println("조회 성공!😊");
 		} else {
-			System.out.println("조회 실패!😢");
+//			System.out.println("조회 실패!😢");
 		}
 		return list;
 	}

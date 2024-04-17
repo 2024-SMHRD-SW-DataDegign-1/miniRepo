@@ -61,9 +61,9 @@ Util.guideLine();
 			
 			Scanner sc = new Scanner(System.in);
 
-			Util.print("======가위 바위 보 게임======");
-			Util.print("     무엇을 내시겠습니까?     ");
-			Util.print("     1.가위  2.바위 3.보  ");
+			Util.println("======가위 바위 보 게임======");
+			Util.println("     무엇을 내시겠습니까?     ");
+			Util.println("     1.가위  2.바위 3.보  ");
 			int user = sc.nextInt();
 
 			// 컴퓨터의 랜덤 선택 만들기
@@ -75,14 +75,14 @@ Util.guideLine();
 			String userGesture = GESTURES[user - 1];
 			String computerGesture = GESTURES[computer];
 
-			Util.print("나의 선택 : " + userGesture);
-			Util.print("과장님의 선택 : " + computerGesture);
+			Util.println("나의 선택 : " + userGesture);
+			Util.println("과장님의 선택 : " + computerGesture);
 			if (user == computer + 1) {
-				Util.print("과장님이랑 비겼습니다 휴.... -.-");
+				Util.println("과장님이랑 비겼습니다 휴.... -.-");
 			} else if ((user == 1 && computer == 2) || (user == 2 && computer == 0) || (user == 0 && computer == 1)) {
-				Util.print("내가 과장님을 이겼다! --- ^.^");
+				Util.println("내가 과장님을 이겼다! --- ^.^");
 			} else {
-				Util.print("과장님한테 졌다... ㅠ.ㅠ");
+				Util.println("과장님한테 졌다... ㅠ.ㅠ");
 				Life -= 1;
 			}
 			if (Life == 0) {

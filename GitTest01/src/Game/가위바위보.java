@@ -25,6 +25,7 @@ public class 가위바위보 {
 		// else if 문을 사용하여 하나의 경우의수를 출력하여 모든 경우의 수를 출력
 		for (int i = 0; i < 3; i++) {
 			
+			
 			Util.showState("인턴",40, 60);
 			
 			// 아스키 코드 입력
@@ -91,8 +92,24 @@ Util.guideLine();
 			if (Life == 0) {
 				result = false;
 				return result;
+				
 			}
+			ClearConsole();
+			
 		}
 		return result;
 	}
+	
+   public void ClearConsole() {
+	        try {
+	           ProcessBuilder pb = new ProcessBuilder("cmd", "/c", "cls");
+	           Process startProcess = pb.inheritIO().start();
+	           startProcess.waitFor();
+	           
+	      } catch (Exception e) {
+	         e.printStackTrace();
+	      }	    
+
+	 }
+
 }

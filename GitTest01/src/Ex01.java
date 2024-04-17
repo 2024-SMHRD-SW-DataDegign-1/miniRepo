@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 import Game.SentenceGame;
 import Game.UpDown;
 import Game.가위바위보;
+=======
+import MainGame.SentenceGame;
+import MainGame.가위바위보;
+>>>>>>> branch 'main' of https://github.com/2024-SMHRD-SW-DataDegign-1/miniRepo.git
 import Util.Util;
 
 
@@ -23,3 +28,5 @@ public class Ex01 {
 		up.play();
 	}
 }
+  
+                                                                                        

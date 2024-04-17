@@ -18,6 +18,9 @@ import Util.Util;
 
 public class Ex01 {
 	public static void main(String[] args) {
+		
+		
+				
 			
 		Story2 str = new Story2();
 		str.play();
@@ -29,6 +32,11 @@ public class Ex01 {
 //		SentenceGame view = new SentenceGame();
 //		view.Play();
 		
+<<<<<<< HEAD
+=======
+
+		DAO dao = new DAO();
+>>>>>>> branch 'main' of https://github.com/2024-SMHRD-SW-DataDegign-1/miniRepo.git
 
 //		UpDown up = new UpDown();
 //		up.play();

@@ -23,46 +23,94 @@ public class 구구단게임 {
 	}
 
 	public boolean play() {
-		// 게임 종료 될 때 맞춘 개수보다 틀린 개수가 더 많으면 경험치 X 스트레스 O
-		// 게임 종료 될 때 틀린 개수보다 맞춘 개수가 더 많으면 경험치 O 스트레스 X
+
 
 		Scanner sc = new Scanner(System.in);
 		Random ran = new Random();
 
-		Util.print("===== 구구단을 외자~ 구구단을 외자! =====");
 		boolean isNum = true;
-		int correct = 0;
-		int wrong = 0;
-		int mLife = 2;
+
+		
 		for (int i = 0; i < 5; i++) {
+			Util.showState("인턴", 40, 60);
+
+			Util.guideLine();
+			String[] str = { "⠄⠠⠀⠄⠠⠀⠄⠠⠀⠄⡠⢀⠄⠠⠀⠄⠠⠀⠄⠠⠀⠄⠠⠀⠄⠠⠀⠄⠠⠀⠄⠠⠀⠄⠠⠀⠄⠠⠀⠄⠠⠀⠄⠠⠀⠄⠠⠀⠄⠠⠀⠄⠠⠀⠄⠠⠀⠄⡀",
+					"⠌⡀⠡⢈⠀⠡⠈⢄⣡⢖⡴⣲⡜⣦⢥⣌⠠⠁⡈⠄⠡⣈⣤⢳⡜⣧⣛⢾⡱⣏⠶⣥⣌⡄⠁⠌⡀⠡⢈⠠⠁⢌⣠⣡⣌⢦⡥⣬⢤⣡⡈⠠⢁⠈⠄⠁⠌⡐⢀",
+					"⠄⠐⡀⠂⢈⢤⡻⣝⠮⢏⢾⡱⣝⢮⡳⣎⡟⣶⢠⣜⡳⣝⢮⡳⣝⢶⡹⣎⠷⣭⢛⠶⡭⢞⡽⢢⡐⢀⡢⠐⠋⠚⠡⠓⣮⢳⡝⣮⢳⣣⢟⡳⣆⠌⡀⠌⢀⠐⡀",
+					"⠈⠄⡐⠈⠐⠋⠁⡈⠠⣀⠀⠿⣜⢧⡻⣜⡽⣜⡳⣎⢷⡹⣎⢷⡹⣎⢷⣹⠀⡀⠠⠀⠀⠄⠀⠁⡀⠄⠱⢀⠂⡀⠄⠀⣯⢳⡝⣮⢳⡭⣞⠵⣫⢛⣤⠐⠀⡐⠠",
+					"⢀⠂⠄⠂⡁⡈⢄⠰⡀⠆⡄⠘⡽⣎⢷⡹⠶⣭⢳⡝⣮⢳⡝⣮⢳⡝⣮⢳⠀⡔⢢⢘⡐⠢⠜⠰⣈⠀⠣⠀⢎⠰⣁⠂⠉⠑⠘⢣⣟⡲⡍⠀⡀⢀⡀⠐⡠⠀⢂",
+					"⡀⠘⡄⠣⠐⠡⠊⡐⢡⠊⡔⡀⠹⣎⢷⣹⡛⠌⠁⠉⠘⠃⠙⠊⠓⠹⠎⠷⠀⡜⢢⢣⠄⠀⡐⠀⢀⠠⠇⠘⣌⠣⢆⢣⠌⡴⠀⣹⠶⡹⠄⢘⡰⢡⠂⢨⡗⣦⡀",
+					"⡇⣄⢤⡰⢦⡵⣂⠈⠆⡱⢠⢁⠀⠛⠮⡵⣋⠀⠥⡈⢄⡐⠠⡐⢀⠂⠤⢀⠀⣏⢧⡓⣎⢳⡱⣋⠶⠀⠌⢘⡬⢳⡍⠀⣉⣀⡁⠎⢁⠡⣠⠃⢆⡃⢆⡀⠙⢲⢳",
+					"⡝⣮⠳⡝⠧⠏⠓⠀⠘⠀⢁⠠⠈⠐⡀⠸⣇⠀⡁⠘⠀⠌⠑⢌⠢⣉⠂⢠⣂⢈⡀⣉⠈⡁⠁⠉⠈⠐⠈⠰⣍⡳⡌⢀⡿⡜⣧⠄⠘⠢⠅⠚⠀⠘⢢⢉⠖⠀⣱",
+					"⡝⠀⠁⡀⠄⡀⢂⠌⡠⠌⡄⢢⢁⠣⡐⠀⣹⠯⣝⡻⢞⠆⢈⠢⡁⢆⠁⢢⣏⢯⡝⣮⣛⡅⠐⣧⢳⡚⠀⣌⣄⣡⢠⡴⢫⡝⠎⢉⡀⠄⢠⢩⠙⣂⠀⠠⠐⠺⡵",
+					"⢮⡀⠱⡀⢆⠱⠈⢆⠡⢊⠔⠁⣠⣠⠄⠠⠀⢀⠀⠈⠉⠀⡀⠃⠜⠠⠀⠛⢼⡣⢟⡲⣝⡆⠘⣦⠳⣍⠀⡘⠘⠂⠛⢸⢧⡻⠄⠲⣌⡙⢦⢡⠓⡤⣀⢂⡐⠀⣯",
+					"⠾⣔⣀⣁⢤⡰⡄⠈⢆⠡⠊⠄⠐⣯⠀⢢⠑⠢⢌⡐⢢⠁⠤⡐⠠⢄⠂⠄⡸⣝⣫⠷⣭⠆⠘⡶⡹⣌⢥⡡⣍⡜⡠⢘⣧⢻⡤⠄⢀⡨⢤⠈⠌⣀⠁⠊⡐⠨⠁",
+					"⠀⠈⠁⠛⠊⠳⢽⣀⣀⣂⡥⣴⢫⡞⣤⣄⣄⣡⠀⠘⠤⡉⠆⠁⢃⠈⠘⢀⡽⣎⢷⡹⣖⢇⡈⢁⠉⡈⢀⠉⡀⢉⢀⡸⣎⠷⡍⠀⣾⡹⡏⠋⠳⣦⠘⡄⠐⠀⠀",
+					"⠀⠀⠀⠀⠀⠀⠘⣧⢻⣜⡳⣭⢳⡝⡶⣭⠞⣖⠀⠉⠂⠑⠂⡘⣷⡚⡷⣎⢷⡹⣎⢷⡹⢮⡝⠏⠻⣹⢏⡿⣹⢏⣏⠷⣭⢻⣅⠂⢻⣽⡳⣴⣺⡵⡧⠀⠌⠀⠀",
+					"⢀⠀⠀⡀⠀⠀⡀⠈⠳⢎⡷⢭⡳⣝⡳⣎⠿⣜⣳⠳⠞⠂⠒⠹⢶⡹⢧⣛⢮⡳⣝⢮⡝⠧⠉⠀⠀⠀⠉⠘⠃⠛⠜⠛⠘⠃⠈⠐⢀⠈⠛⠑⠓⠉⠠⠘⠀⠀⠀",
+					"⠀⠀⠄⠀⡀⠁⢀⠀⡀⢀⠈⠃⠙⠎⠳⢉⠛⠌⠁⠁⡀⠀⡀⠀⡀⠉⠁⠋⠊⠑⠉⠂⠈⠀⡀⠄⠀⠄⢀⠠⠀⢀⠀⠠⠀⠀⠄⠀⡀⠈⢀⠈⠀⠁⡀⠄⠀⡐⠈" };
+			String[] value = Util.setMiddle(str);
+
+			System.out.println();
+			System.out.println();
+
+			Util.print(value);
+
+			System.out.println();
+			System.out.println();
+			System.out.println();
+			Util.guideLine();
+
+			int correct = 0;
+			int wrong = 0;
+			int mLife = 2;
+
+			Util.println("===== 구구단을 외자~ 구구단을 외자! =====");
 			int first = ran.nextInt(100) + 1;
 			int second = ran.nextInt(10) + 1;
 			int result = first * second;
 
-			System.out.print("문제: " + first + " X " + second + " = ");
+
+			Util.println("문제: " + first + " X " + second + " = ");
 			int people = sc.nextInt();
-
+			
 			if (people == result) {
-				System.out.println("축하해요 정답입니다~~!^^");
+				Util.println("축하해요 정답입니다~~!^^");
 				correct++;
-				System.out.println();
-
+				 Util.println("계속하려면 엔터키를 누르세요...");
+		            sc.nextLine(); // 사용자 입력 대기
 			} else {
-				System.out.println("아쉽게 틀렸네요 ㅠㅠㅠ \t (정답 : " + result + ")");
+				Util.println("아쉽게 틀렸네요 ㅠㅠㅠ \t (정답 : " + result + ")");
 				wrong++;
 				mLife--;
-				System.out.println();
+				 Util.println("계속하려면 엔터키를 누르세요...");
+		            sc.nextLine(); // 사용자 입력 대기
 			}
+			sc.nextLine();
 			if (mLife == 0) {
 				isNum = false;
-				System.out.println("========== !!! 게임 종료 !!! ==========");
+				Util.println("========== !!! 게임 종료 !!! ==========");
+				Util.println("맞춘 개수 : " + correct);
+				Util.println("틀린 개수 : " + wrong);
 				break;
 			}
+			ClearConsole();
 		}
-		System.out.println("맞춘 개수 : " + correct);
-		System.out.println("틀린 개수 : " + wrong);
-
 		return isNum;
+
+
+	}
+
+	public void ClearConsole() {
+		try {
+			ProcessBuilder pb = new ProcessBuilder("cmd", "/c", "cls");
+			Process startProcess = pb.inheritIO().start();
+			startProcess.waitFor();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }

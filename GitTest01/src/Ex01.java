@@ -1,3 +1,4 @@
+import Game.구구단게임;
 import MainGame.SentenceGame;
 import MainGame.가위바위보;
 
@@ -22,8 +23,8 @@ public class Ex01 {
 //		가위바위보 view = new 가위바위보();
 //		view.play();
 		
-//		구구단게임 g = new 구구단게임();
-//		g.play();
+		구구단게임 g = new 구구단게임();
+		g.play();
 	}
 }
   

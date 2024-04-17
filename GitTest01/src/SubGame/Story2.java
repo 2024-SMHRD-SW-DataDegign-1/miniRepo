@@ -30,36 +30,39 @@ public class Story2 {
 		Date firstTime = data.get(0).getFirstTime();
 		Date lastTime = data.get(0).getLastTime();
 		
-		System.out.println("경험치 \t 스트레스 \t 생성시간 \t\t 현재시간");
-		System.out.println(exp+" \t "+stress+" \t "+firstTime+" \t "+lastTime);
+		Util.print("gg");
+		Util.println("gg");
+		
+//		Util.println("경험치 \t 스트레스 \t 생성시간 \t\t 현재시간");
+//		Util.println(exp+" \t "+stress+" \t "+firstTime+" \t "+lastTime);
+//		
 		
 		
-		
-		Scanner sc = new Scanner(System.in);
-		System.out.print("==== 비상 !! 옆자리 상사가 서류파일을 가지고 다가온다!! ====");
-		System.out.println();
-		System.out.print("상사 : 혹시 지금 많이 바빠요?");
-		System.out.print(" 내가 일이 밀려있는데 이것 좀 대신해줄 수 있어요?");
-		System.out.println();
-		System.out.print("1) 넵! 제가 하겠습니다!! 2) 제 일이 끝나면 생각해보겠습니다... 3) 제가요? ");
-		
-		
-		int choice = sc.nextInt();
-		
-			
-		if(choice ==1 ) {
-			System.out.print("상사의 호감을 얻어 경험치 증가에 성공했습니다!");			
-			dao.updateUser(exp+20, stress);
-		}else if(choice ==2 ) {
-			System.out.print("찝찝해서 스트레스가 상승한다 :(");
-			dao.updateUser(exp, stress+20);
-		}else {
-			System.out.print("너무 MZ같은 답변이었나,,, 후회된다.. 스트레스 ㅠ.ㅠ");
-			dao.updateUser(exp, stress+20);
-		}
+//		Scanner sc = new Scanner(System.in);
+//		Util.print("==== 비상 !! 옆자리 상사가 서류파일을 가지고 다가온다!! ====");
+//		System.out.println();
+//		Util.print("상사 : 혹시 지금 많이 바빠요?");
+//		Util.print(" 내가 일이 밀려있는데 이것 좀 대신해줄 수 있어요?");
+//		System.out.println();
+//		Util.print("1) 넵! 제가 하겠습니다!! 2) 제 일이 끝나면 생각해보겠습니다... 3) 제가요? ");
 		
 		
-	 return;
+//		int choice = sc.nextInt();
+//		
+//			
+//		if(choice ==1 ) {
+//			Util.print("상사의 호감을 얻어 경험치 증가에 성공했습니다!");			
+//			dao.updateUser(exp+20, stress);
+//		}else if(choice ==2 ) {
+//			Util.print("찝찝해서 스트레스가 상승한다 :(");
+//			dao.updateUser(exp, stress+20);
+//		}else {
+//			Util.print("너무 MZ같은 답변이었나,,, 후회된다.. 스트레스 ㅠ.ㅠ");
+//			dao.updateUser(exp, stress+20);
+//		}
+//		
+//		
+//	 return;
 	
 	}
 	

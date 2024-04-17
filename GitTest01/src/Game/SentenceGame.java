@@ -4,6 +4,9 @@ import java.util.Scanner;
 
 import Util.Util;
 
+
+
+
 public class SentenceGame {
 	String[] mAnswerList = {
 			"답안지",

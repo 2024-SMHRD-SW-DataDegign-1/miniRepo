@@ -15,9 +15,10 @@ import Util.Util;
 
 public class Ex01 {
 	public static void main(String[] args) {
-			
+
 구구단게임 g =new 구구단게임();
 g.play();
+
 	}
 }
   

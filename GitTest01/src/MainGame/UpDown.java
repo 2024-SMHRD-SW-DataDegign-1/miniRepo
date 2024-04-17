@@ -8,10 +8,6 @@ import Util.Util;
 public class UpDown {
 
 	public boolean play() {
-
-
-
-			
 				
 		Random ran = new Random();
 		int ranNum = ran.nextInt(100) + 1;

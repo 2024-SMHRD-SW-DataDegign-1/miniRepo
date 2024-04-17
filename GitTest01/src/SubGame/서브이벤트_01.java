@@ -1,7 +1,7 @@
 package SubGame;
 
 import java.util.Scanner;
-
+import Util.Util;
 public class 서브이벤트_01 {
 
 	// 콘솔창의 가로 길이 120 세로길이 30 인데 그중에 상태창이 차지하는 세로길이는 3 그림이 차지하는 세로길이는 22(구분선포함)
@@ -15,11 +15,16 @@ public class 서브이벤트_01 {
 //		  (스트레스 상승)
 //	    3. 제가요?
 //	       (경험치 마이너스)
+	
+	public boolean play() {
 		Scanner sc = new Scanner(System.in);
+		Util.print("===");
 		
+		
+		return false;
 	
 	
 	
-	
+	}
 	
 }

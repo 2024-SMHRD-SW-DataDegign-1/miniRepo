@@ -118,7 +118,7 @@ public class Util {
 	public static void showState(String level, int 스트레스, int exp)
 	{
     	System.out.println();
-    	Util.print("직급 : "+ level + "\t\t\t\t스트레스 : " + 스트레스 + "%\t\t"
+    	Util.println("직급 : "+ level + "\t\t\t\t스트레스 : " + 스트레스 + "%\t\t"
     			+ "\t\t\t 경험치 : [" + setExp(exp)   + "]");
     	System.out.println();
 	}

@@ -13,7 +13,8 @@ public class Story2 {
 	// 스토리 혹은 문제 출력하는 세로길이가 5 입니다.
 	
 	public void play() {
-
+		Scanner sc = new Scanner(System.in);
+		
 		// DB 관련
 		DAO dao = new DAO();
 		
@@ -30,39 +31,41 @@ public class Story2 {
 		Date firstTime = data.get(0).getFirstTime();
 		Date lastTime = data.get(0).getLastTime();
 		
-		Util.print("gg");
-		Util.println("gg");
 		
-//		Util.println("경험치 \t 스트레스 \t 생성시간 \t\t 현재시간");
-//		Util.println(exp+" \t "+stress+" \t "+firstTime+" \t "+lastTime);
+		Util.println("경험치 \t 스트레스 \t 생성시간 \t\t 현재시간");
+		Util.println(exp+" \t "+stress+" \t "+firstTime+" \t "+lastTime);
 		
 		
-		
-//		Scanner sc = new Scanner(System.in);
-//		Util.print("==== 비상 !! 옆자리 상사가 서류파일을 가지고 다가온다!! ====");
-//		System.out.println();
-//		Util.print("상사 : 혹시 지금 많이 바빠요?");
-//		Util.print(" 내가 일이 밀려있는데 이것 좀 대신해줄 수 있어요?");
-//		System.out.println();
-//		Util.print("1) 넵! 제가 하겠습니다!! 2) 제 일이 끝나면 생각해보겠습니다... 3) 제가요? ");
+		Util.println("==== 비상 !! 옆자리 상사가 서류파일을 가지고 다가온다!! ====");
+		System.out.println();
+		Util.println("상사 : 혹시 지금 많이 바빠요?");
+		Util.println(" 내가 일이 밀려있는데 이것 좀 대신해줄 수 있어요?");
+		System.out.println();
+		Util.println("1) 넵! 제가 하겠습니다!! 2) 제 일이 끝나면 생각해보겠습니다... 3) 제가요? ");
 		
 		
-//		int choice = sc.nextInt();
-//		
-//			
-//		if(choice ==1 ) {
-//			Util.print("상사의 호감을 얻어 경험치 증가에 성공했습니다!");			
-//			dao.updateUser(exp+20, stress);
-//		}else if(choice ==2 ) {
-//			Util.print("찝찝해서 스트레스가 상승한다 :(");
-//			dao.updateUser(exp, stress+20);
-//		}else {
-//			Util.print("너무 MZ같은 답변이었나,,, 후회된다.. 스트레스 ㅠ.ㅠ");
-//			dao.updateUser(exp, stress+20);
-//		}
-//		
-//		
-//	 return;
+		int choice = sc.nextInt();
+		
+			
+		switch (choice) {
+		case 1:
+			Util.println("경험치 증가! 하지만 나의 스트레스는 쌓인다.. -.-zzz");
+			// 경험치는 증가하지만 스트레스 증가
+			dao.updateUser(exp + 20, stress + 20);
+			break;
+		
+		case 2: 
+			Util.println("이렇게 말하면 안되는 거였나,,, 스트레스...");
+			// 경험치는 변화 없지만 스트레스 감소
+			dao.updateUser(exp, stress - 20);
+			break;
+		case 3:
+			Util.println("너무 mz같았나.. 스트레스다!!");
+			dao.updateUser(exp, stress - 20);
+			break;
+		}
+		
+	 return;
 	
 	}
 	

@@ -1,5 +1,6 @@
 import Game.SentenceGame;
-import Game.가위바위보;
+import Game.구구단게임;
+//import Game.가위바위보;
 import Util.Util;
 
 public class Ex01 {
@@ -17,7 +18,10 @@ public class Ex01 {
 //		SentenceGame view = new SentenceGame();
 //		view.Play();
 		
-		가위바위보 view = new 가위바위보();
-		view.play();
+//		가위바위보 view = new 가위바위보();
+//		view.play();
+		
+		구구단게임 g = new 구구단게임();
+		g.play();
 	}
 }

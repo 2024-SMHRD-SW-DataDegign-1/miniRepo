@@ -26,9 +26,9 @@ public class DAO {
 //			String password = "12345";
 			conn = DriverManager.getConnection(url, user, password);
 			if (conn != null) {
-				System.out.println("DB 연결 성공");
+//				System.out.println("DB 연결 성공");
 			} else {
-				System.out.println("DB 연결 실패");
+//				System.out.println("DB 연결 실패");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -58,16 +58,15 @@ public class DAO {
 			psmt.setInt(1, exp);
 			psmt.setInt(2, stress);
 			row = psmt.executeUpdate();
-			System.out.println("row : " + row);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			dbClose();
 		}
 		if (row > 0) {
-			System.out.println("회원정보수정 성공!😊");
+//			System.out.println("회원정보수정 성공!😊");
 		} else {
-			System.out.println("회원정보수정 실패!😢");
+//			System.out.println("회원정보수정 실패!😢");
 		}
 	}
 
@@ -81,7 +80,6 @@ public class DAO {
 			conn();
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
-			System.out.println(rs);
 			while (rs.next()) {
 				int id = rs.getInt(1);
 				int exp = rs.getInt(2);
@@ -98,9 +96,9 @@ public class DAO {
 			dbClose();
 		}
 		if (dto != null) {
-			System.out.println("조회 성공!😊");
+//			System.out.println("조회 성공!😊");
 		} else {
-			System.out.println("조회 실패!😢");
+//			System.out.println("조회 실패!😢");
 		}
 		return list;
 	}

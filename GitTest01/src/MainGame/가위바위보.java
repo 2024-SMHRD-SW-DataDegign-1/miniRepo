@@ -102,11 +102,24 @@ public class 가위바위보 {
 			if (Life == 0) {
 				result = false;
 				return result;
-			}
+			}Delay(4000);
 			ClearConsole();
 		}
 		return result;
 	}
+	
+	 public void Delay(int MilTime)
+	   {
+	      try
+	      {
+	         Thread.sleep(5000);
+	         
+	      }
+	      catch(InterruptedException  e)
+	      {
+	         e.printStackTrace();
+	      }
+	   }
 
 	public void ClearConsole() {
 		try {

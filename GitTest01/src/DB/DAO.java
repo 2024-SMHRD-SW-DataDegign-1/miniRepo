@@ -121,9 +121,9 @@ public class DAO {
 			dbClose();
 		}
 		if (rs == null) {
-			System.out.println("조회 성공!😊");
+//			System.out.println("조회 성공!😊");
 		} else {
-			System.out.println("조회 실패!😢");
+//			System.out.println("조회 실패!😢");
 		}
         if (exp >= 0 && exp < 100) {
             return "인턴";
@@ -163,7 +163,7 @@ public class DAO {
 		if(row > 0) {
 //			System.out.println("타임라인 수정 성공!");
 		} else {
-			System.out.println("타임라인 수정 실패!");
+//			System.out.println("타임라인 수정 실패!");
 		}
 	}
 }

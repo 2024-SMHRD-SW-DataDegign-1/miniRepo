@@ -55,7 +55,7 @@ String[] str =
 "⠀⠠⠀⠀⠀⠑⠐⣦⠚⡊⠎⡓⣔⡴⣟⣿⠇⠀⠀⠀⠀⠀⡀⢀⣀⣤⢦⡶⣿⣻⣺⢁⠣⠡⢈⠒⡄⠀⠀⠀⠀⠀",
 "⠁⠀⠀⠀⠠⠀⡞⡡⡮⣲⢟⣾⠽⢝⣗⡿⣽⣫⣗⢞⢺⣹⢫⢫⣺⡺⣽⢿⣻⡺⠣⡨⢘⠌⡠⢑⠌⢦⠀⠀⠁⠀",
 "⠀⠀⢀⠠⠀⢸⡵⡧⣾⣺⢵⡿⡄⢅⠢⡙⣽⡾⣾⡵⣵⢫⢼⢽⢞⡿⡽⣟⣵⢯⣧⠨⡂⢅⠢⠡⡊⡴⠀⠀⠀⠀",
-"⠁⠀⠀⠀⠀⢐⡵⣻⣞⢮⢗⣯⡻⣢⢵⣴⡿⡯⣞⣽⣺⢽⡽⡽⣽⣺⢽⣻⡺⣯⣞⡗⡮⣦⡵⣗⢿⢽⡀⠀⠀⠁"
+
 };
 String[] value = Util.setMiddle(str);
 Util.print(value);
@@ -89,6 +89,7 @@ Util.guideLine();
 			break;
 		}
 		
+		Delay(4000);
 		ClearConsole();
 	    return;
 	
@@ -103,4 +104,22 @@ Util.guideLine();
 	         e.printStackTrace();
 	      }
 	    }
+	   
+	   public void Delay(int MilTime)
+	   {
+	      try
+	      {
+	         Thread.sleep(5000);
+	         
+	      }
+	      catch(InterruptedException  e)
+	      {
+	         e.printStackTrace();
+	      }
+	   }
+	   
+	   
+	   
+	   
+	   
 }

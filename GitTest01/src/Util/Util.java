@@ -68,7 +68,7 @@ public class Util {
 	// 구분선 출력을 위한 메소드
 	public static void guideLine()
 	{
-		for(int i = 0; i< mWidth; i++)
+		for(int i = 0; i< mWidth-1; i++)
 		{
 			System.out.print("*");
 		}
@@ -119,7 +119,7 @@ public class Util {
 	{
     	System.out.println();
     	Util.println("직급 : "+ level + "\t\t\t\t스트레스 : " + 스트레스 + "%\t\t"
-    			+ "\t\t\t 경험치 : [" + setExp(exp%100)   + "]");
+    			+ "\t\t\t경험치 : [" + setExp(exp%100)   + "]");
     	System.out.println();
 	}
 	

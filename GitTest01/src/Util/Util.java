@@ -43,7 +43,7 @@ public class Util {
 		try {
 			out = new PrintWriter(new OutputStreamWriter(System.out, "UTF-8"), true);
 			out.printf(console,null);
-			ㅇ
+			
 			
 		} catch (UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block

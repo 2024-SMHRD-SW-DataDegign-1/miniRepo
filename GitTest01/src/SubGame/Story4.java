@@ -50,7 +50,7 @@ Util.guideLine();
 		System.out.println();
 		Util.println(" 혼자해결하기에는 빠듯할 거 같은데 상사에게 도움을 요청해야할까?! ");
 		System.out.println();
-		Util.println("1) 미리 상사에게 상황을 설명하고 조언을 구하자! 2) 그래도 혼자 해결해야  ");
+		Util.println("1) 미리 상사에게 상황을 설명하고 조언을 구하자! 2) 그래도 혼자 해결해야 나에게 도움이 되지 않을까..? ");
 		
 		
 		int choice = sc.nextInt();

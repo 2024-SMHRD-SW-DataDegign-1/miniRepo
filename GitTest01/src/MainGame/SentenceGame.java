@@ -1,12 +1,13 @@
 package MainGame;
 
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 import DB.DAO;
 import DB.DTO;
 import Util.Util;
-
+import java.nio.charset.Charset;
 
 
 
@@ -78,16 +79,20 @@ public class SentenceGame {
     public void playGame(int idx)
     {
 		mSc = new Scanner(System.in);
+		
+		
 		Util.println("문장 : " + mAnswerList[idx]);
 		
 		Util.println("입력 : ");
 		String value = mSc.next();
+		
 		if(!mAnswerList[idx].equals(value))
 		{
 			mLife--;
 			
 		}
-		//Util.print("남은 목숨 : " + mLife);
+		Util.print("남은 목숨 : " + mLife);
+		Delay(2000);
     }
     
     private void showConsole()
@@ -127,6 +132,18 @@ public class SentenceGame {
 		Util.guideLine();
     }
     
-
+	public void Delay(int MilTime)
+	{
+		try
+		{
+			Thread.sleep(MilTime);
+			
+		}
+		catch(InterruptedException  e)
+		{
+			e.printStackTrace();
+		}
+	}
+	
 }
 

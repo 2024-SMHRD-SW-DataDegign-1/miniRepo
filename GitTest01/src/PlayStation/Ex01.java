@@ -1,5 +1,4 @@
-
-import Game.구구단게임;
+package PlayStation;
 
 import java.sql.Date;
 import java.util.ArrayList;
@@ -14,10 +13,7 @@ import Util.Util;
 
 
 public class Ex01 {
-	public static void main(String[] args) {
 
-		
-	}
 }
   
                                                                                         

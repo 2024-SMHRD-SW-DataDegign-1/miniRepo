@@ -30,11 +30,8 @@ public class Story2 {
 		int stress = data.get(0).getStress();
 		Date firstTime = data.get(0).getFirstTime();
 		Date lastTime = data.get(0).getLastTime();
-		
-		
-		Util.println("경험치 \t 스트레스 \t 생성시간 \t\t 현재시간");
-		Util.println(exp+" \t "+stress+" \t "+firstTime+" \t "+lastTime);
-		
+				
+		  Util.showState(dao.RankCache(),stress, exp);
 		
 		// 그림 출력
 Util.guideLine();	
@@ -66,7 +63,6 @@ Util.guideLine();
 
 
 		Util.println("==== 비상 !! 옆자리 상사가 서류파일을 가지고 다가온다!! ====");
-		System.out.println();
 		Util.println("상사 : 혹시 지금 많이 바빠요? 내가 일이 밀려있는데 이것 좀 대신해줄 수 있어요? ");
 		System.out.println();
 		Util.println("1) 넵! 제가 하겠습니다!! 2) 제 일이 끝나면 생각해보겠습니다... 3) 제가요? ");

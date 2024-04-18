@@ -140,4 +140,30 @@ public class DAO {
             return "백수";
         }
 	}
+	
+	/**
+	 * @author 박민수
+	 * @param String => "출근", "오전", "점심", "오후", "퇴근"
+	 * @apiNote 입력한 파라미터를 DB에 저장
+	 * @return 리턴값 없음 
+	 * */
+	public void updateTime(String timeline) {
+		String sql = "UPDATE timeline SET timeline = ?";
+		int row = 0;
+		try {
+			conn();
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, timeline);
+			row = psmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			dbClose();
+		}
+		if(row > 0) {
+			System.out.println("타임라인 수정 성공!");
+		} else {
+			System.out.println("타임라인 수정 실패!");
+		}
+	}
 }

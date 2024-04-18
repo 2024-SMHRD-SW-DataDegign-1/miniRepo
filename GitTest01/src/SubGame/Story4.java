@@ -48,9 +48,9 @@ Util.guideLine();
 
 		Util.println("==== 비상 !! 중요한 회의에 참석해야 하는데 준비가 아직 덜 됐다! ====");
 		System.out.println();
-		Util.println(" ");
+		Util.println(" 혼자해결하기에는 빠듯할 거 같은데 상사에게 도움을 요청해야할까?! ");
 		System.out.println();
-		Util.println("1) 넵! 제가 하겠습니다!! 2) 제 일이 끝나면 생각해보겠습니다... 3) 제가요? ");
+		Util.println("1) 미리 상사에게 상황을 설명하고 조언을 구하자! 2) 그래도 혼자 해결해야  ");
 		
 		
 		int choice = sc.nextInt();

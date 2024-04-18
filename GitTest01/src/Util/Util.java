@@ -119,7 +119,7 @@ public class Util {
 	{
     	System.out.println();
     	Util.println("직급 : "+ level + "\t\t\t\t스트레스 : " + 스트레스 + "%\t\t"
-    			+ "\t\t\t 경험치 : [" + setExp(exp)   + "]");
+    			+ "\t\t\t 경험치 : [" + setExp(exp%100)   + "]");
     	System.out.println();
 	}
 	

@@ -27,23 +27,16 @@ public class Story3 {
 		// 사용자 정보를 불러오는 방법
 		// updateUser(상승시킬exp, 상승시킬stress);
 		ArrayList<DTO> data = dao.searchUser();
-
-		Util.showState("인턴", 100, 100);
-
-
-
-
-		showConsole();
-
-
-		
-		
 		// 경험치
 		int exp = data.get(0).getExp();
 		int stress = data.get(0).getStress();
-		
-		Util.println("저기 인턴아 나 바빠서 그러는데 이거 혹시 해줄 수 있어?");
-		Util.println("1. 어.. 그래 도와줄게\t2. 아니 나도 바빠 죽겠는데");
+
+		Util.showState("인턴", exp, stress);
+
+		showConsole();
+
+		Util.println("직장 동기가 도움을 요청하는 상황이다 당신의 선택은?");
+		Util.println("1. 그래! 도와줄게!!\t2. 아니 나도 바빠 ");
 		int choice = sc.nextInt();
 		switch(choice)
 		{
@@ -60,7 +53,6 @@ public class Story3 {
 	
     private void showConsole()
     {
-    	
     	Util.guideLine();
     	String[] str =
     		{

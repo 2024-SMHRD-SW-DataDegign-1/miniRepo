@@ -11,21 +11,13 @@ import SubGame.Story4;
 import Util.Util;
 
 public class Ex01 {
-<<<<<<< HEAD
+public static void main(String[] args) {
 	
 	
-	
-	
-	}
-=======
-	public static void main(String[] args) {
->>>>>>> branch 'main' of https://github.com/2024-SMHRD-SW-DataDegign-1/miniRepo.git
 
-<<<<<<< HEAD
-  
-                                                                                        
-=======
+
 	
-	}
+	
 }
->>>>>>> branch 'main' of https://github.com/2024-SMHRD-SW-DataDegign-1/miniRepo.git
+	
+}

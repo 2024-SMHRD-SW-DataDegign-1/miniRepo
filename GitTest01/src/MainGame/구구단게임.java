@@ -102,7 +102,7 @@ public class 구구단게임 {
 
 			Util.println("====== 구구단을 외자! 구구단을 외자~! ======");
 			if(i < 5) {
-			Util.print("문제: " + num1[i] + " X " + num2[i] + " = ");
+			Util.print("문제: " + num1[i] + " X " + num2[i] + " = "+ " 정답은? ");
 			people = sc.nextInt();
 
 			// sc.nextLine();

@@ -21,17 +21,13 @@ public class Story3 {
 		
 		// DB 관련
 		DAO dao = new DAO();
-		// 경험치와 스트레스를 수정하는 방법
-		//dao.updateUser(exp1, stress1);
-		
-		// 사용자 정보를 불러오는 방법
-		// updateUser(상승시킬exp, 상승시킬stress);
+
 		ArrayList<DTO> data = dao.searchUser();
 		// 경험치
 		int exp = data.get(0).getExp();
 		int stress = data.get(0).getStress();
-
-		Util.showState("인턴", exp, stress);
+		String level = dao.RankCache();
+		Util.showState(level, exp, stress);
 
 		showConsole();
 

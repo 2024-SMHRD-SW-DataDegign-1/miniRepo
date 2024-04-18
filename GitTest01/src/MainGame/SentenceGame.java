@@ -1,7 +1,10 @@
 package MainGame;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
+import DB.DAO;
+import DB.DTO;
 import Util.Util;
 
 
@@ -30,10 +33,19 @@ public class SentenceGame {
 	public boolean Play()
 	{
 		boolean result = true;
+		DAO dao = new DAO();
+
+		ArrayList<DTO> data = dao.searchUser();
+		// 경험치
+		int exp = data.get(0).getExp();
+		int stress = data.get(0).getStress();
+		String level = dao.RankCache();
+		
 		for(int i =0; i< mAnswerList.length; i++)
 		{
 
-			Util.showState("인턴",40, 60);
+			
+			Util.showState(level,stress, exp);
 			showConsole();
 			
 			System.out.println();

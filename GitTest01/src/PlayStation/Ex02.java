@@ -173,6 +173,7 @@ public class Ex02 {
 		{
 			isGame = false;
 		}
+		ClearConsole();
 	}
 	
 	public static void ClearConsole() {

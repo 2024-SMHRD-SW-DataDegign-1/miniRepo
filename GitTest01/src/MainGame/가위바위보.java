@@ -64,8 +64,10 @@ public class 가위바위보 {
 			String[] value = Util.setMiddle(str);
 
 			Util.print(value);
-
-
+			
+            System.out.println();
+            System.out.println();
+            
 			Util.guideLine();
 
 			Scanner sc = new Scanner(System.in);
@@ -99,7 +101,7 @@ public class 가위바위보 {
 				result = false;
 				return result;
 			}
-			
+			Delay(2000);
 			ClearConsole();
 		}
 		return result;

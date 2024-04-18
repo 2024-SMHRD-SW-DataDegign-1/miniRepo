@@ -103,7 +103,7 @@ public class DAO {
 		return list;
 	}
 	
-	// 직
+	// 직급 불러오는 메소드
 	public String RankCache() {
 		String sql = "select exp from game_user";
 		ResultSet rs = null;

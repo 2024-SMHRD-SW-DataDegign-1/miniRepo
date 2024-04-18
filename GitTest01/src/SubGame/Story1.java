@@ -76,7 +76,8 @@ public class Story1 {
 			// 경험치는 변화 없지만 스트레스 감소
 			dao.updateUser(exp, stress - 20);
 			break;
-		}
+			
+		}Delay(4000);
 		ClearConsole();
 		return;
 		
@@ -92,4 +93,16 @@ public class Story1 {
 			e.printStackTrace();
 		}
 	}
+	 public void Delay(int MilTime)
+	   {
+	      try
+	      {
+	         Thread.sleep(5000);
+	         
+	      }
+	      catch(InterruptedException  e)
+	      {
+	         e.printStackTrace();
+	      }
+	   }
 }

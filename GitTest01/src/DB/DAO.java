@@ -103,6 +103,41 @@ public class DAO {
 		return list;
 	}
 	
-
-
+	// 직
+	public String RankCache() {
+		String sql = "select exp from game_user";
+		ResultSet rs = null;
+		int exp = 0;
+		try {
+			conn();
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			while (rs.next()) {
+				exp = rs.getInt(1);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			dbClose();
+		}
+		if (rs == null) {
+			System.out.println("조회 성공!😊");
+		} else {
+			System.out.println("조회 실패!😢");
+		}
+        if (exp >= 0 && exp < 100) {
+            return "인턴";
+        } else if (exp >= 100 && exp < 200) {
+            return "사원";
+        } else if (exp >= 200 && exp < 300) {
+            return "대리";
+        } else if (exp >= 300 && exp < 400) {
+            return "부장";
+        } else if(exp >= 400 && exp < 500 ) {
+        	return "사장";
+        }
+        else {
+            return "백수";
+        }
+	}
 }

@@ -133,7 +133,7 @@ public class DAO {
             return "대리";
         } else if (exp >= 300 && exp < 400) {
             return "부장";
-        } else if(exp >= 400 && exp < 500 ) {
+        } else if(exp >= 400 && exp < 99900 ) {
         	return "사장";
         }
         else {

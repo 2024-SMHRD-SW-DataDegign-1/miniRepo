@@ -96,7 +96,7 @@ public class Story1 {
 	   {
 	      try
 	      {
-	         Thread.sleep(5000);
+	         Thread.sleep(MilTime);
 	         
 	      }
 	      catch(InterruptedException  e)

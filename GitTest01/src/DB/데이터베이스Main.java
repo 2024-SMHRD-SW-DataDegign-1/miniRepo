@@ -25,8 +25,8 @@ public class 데이터베이스Main {
 		int stress = data.get(0).getStress();
 		Date firstTime = data.get(0).getFirstTime();
 		Date lastTime = data.get(0).getLastTime();
-//		
-//		
+		
+		
 //		System.out.println("경험치 \t 스트레스 \t 생성시간 \t\t 현재시간");
 //		System.out.println(exp+" \t "+stress+" \t "+firstTime+" \t "+lastTime);
 	}

@@ -50,7 +50,7 @@ Util.guideLine();
 		System.out.println();
 		Util.println(" 혼자해결하기에는 빠듯할 거 같은데 상사에게 도움을 요청해야할까?! ");
 		System.out.println();
-		Util.println("1) 미리 상사에게 상황을 설명하고 조언을 구하자! 2) 그래도 혼자 해결해야 나에게 도움이 되지 않을까..? ");
+		Util.println("1) 미리 상사에게 상황을 설명하고 도움을 구하자! 2) 회의 전까지 어떻게든 되겠지~! 좀 걱정되는데..?");
 		
 		
 		int choice = sc.nextInt();
@@ -58,19 +58,15 @@ Util.guideLine();
 			
 		switch (choice) {
 		case 1:
-			Util.println("경험치 증가! 하지만 나의 스트레스는 쌓인다.. -.-zzz");
-			// 경험치는 증가하지만 스트레스 증가
-			dao.updateUser(exp + 20, stress + 20);
+			Util.println("휴~ 상사의 조언을 받아 성공적으로 회의를 마무리했다! 경험치 증가 ~! ");
+			// 경험치는 증가
+			dao.updateUser(exp + 20, stress);
 			break;
 		
 		case 2: 
-			Util.println("이렇게 말하면 안되는 거였나,,, 스트레스...");
+			Util.println(" ");
 			// 경험치는 변화 없지만 스트레스 감소
-			dao.updateUser(exp, stress - 20);
-			break;
-		case 3:
-			Util.println("너무 mz같았나.. 스트레스다!!");
-			dao.updateUser(exp, stress - 20);
+			dao.updateUser(exp , stress + 20);
 			break;
 		}
 		

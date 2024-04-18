@@ -10,13 +10,18 @@ import MainGame.SentenceGame;
 import MainGame.UpDown;
 import MainGame.가위바위보;
 import MainGame.구구단게임;
+import Music.MyThread;
 import SubGame.Story1;
 import SubGame.Story2;
 import SubGame.Story3;
 import SubGame.Story4;
 import Util.Util;
+import javazoom.jl.player.MP3Player;
 
-public class Ex02 {
+public class Ex02 {	
+
+   static MyThread thr = new MyThread();
+   
 	//String[] mLevel = {"인턴", "사원", };
 	static String[] mTime = {"출근", "오전", "점심", "오후", "퇴근"};
 	static int mTimeIdx = 0;
@@ -30,7 +35,8 @@ public class Ex02 {
 	public static void main(String[] args) {
 		Util.setEncoding();
 		ClearConsole();
-
+		thr.start();
+		
 		Random rand = new Random();
 		Story1 story1 = new Story1();
 		Story2 story2 = new Story2();
@@ -42,7 +48,7 @@ public class Ex02 {
 		가위바위보 main3 = new 가위바위보();
 		구구단게임 main4 = new 구구단게임();
 		
-
+	
 		while(true)
 		{
 			if(!isGame)
@@ -50,11 +56,11 @@ public class Ex02 {
 				Util.println("1. 게임 시작 \t 2.종료");
 				int choice = sc.nextInt();
 				if(choice == 1)
-				{
+				{ 
 					isGame = true;
 				}
 				else if(choice == 2)
-				{
+				{  thr.stop();
 					break;
 				}
 				else
@@ -65,6 +71,7 @@ public class Ex02 {
 			}
 			if(isGame)
 			{
+				
 				if(mTimeIdx == 0 || mTimeIdx == 2 || mTimeIdx == 4)
 				{
 					// 서브 이벤트

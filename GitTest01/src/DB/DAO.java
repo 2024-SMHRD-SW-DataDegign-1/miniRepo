@@ -161,7 +161,7 @@ public class DAO {
 			dbClose();
 		}
 		if(row > 0) {
-			System.out.println("타임라인 수정 성공!");
+//			System.out.println("타임라인 수정 성공!");
 		} else {
 			System.out.println("타임라인 수정 실패!");
 		}

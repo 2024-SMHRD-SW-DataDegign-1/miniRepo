@@ -127,9 +127,6 @@ public class SentenceGame {
 		Util.guideLine();
     }
     
-    private void showState()
-    {
 
-    }
 }
 

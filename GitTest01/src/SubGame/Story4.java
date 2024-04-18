@@ -12,7 +12,7 @@ public class Story4 {
 
 	public void play() {
 		Scanner sc = new Scanner(System.in);
-		
+		System.out.println();
 		// DB 관련
 		DAO dao = new DAO();
 		

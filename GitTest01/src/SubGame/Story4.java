@@ -59,13 +59,13 @@ Util.guideLine();
 		switch (choice) {
 		case 1:
 			Util.println("휴~ 상사의 조언을 받아 성공적으로 회의를 마무리했다! 경험치 증가 ~! ");
-			// 경험치는 증가
+			// 경험치 증가
 			dao.updateUser(exp + 20, stress);
 			break;
 		
 		case 2: 
-			Util.println(" ");
-			// 경험치는 변화 없지만 스트레스 감소
+			Util.println("준비가 너무 안된채로 들어가버렸다 ㅠㅠ 스트레스 ㅠ.ㅠ");
+			// 경험치는 변화 없지만 스트레스 상승
 			dao.updateUser(exp , stress + 20);
 			break;
 		}

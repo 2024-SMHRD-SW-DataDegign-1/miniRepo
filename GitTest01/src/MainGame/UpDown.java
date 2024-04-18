@@ -128,9 +128,17 @@ public class UpDown {
 	         
 	      }
 	      
+	          
 	      }
 	      return false;
+		
+	      
 	   } 
+	  
+	   
+	   
+	   
+	   
 	   public void ClearConsole() {
 	        try {
 	           ProcessBuilder pb = new ProcessBuilder("cmd", "/c", "cls");

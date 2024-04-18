@@ -89,7 +89,7 @@ Util.guideLine();
 			break;
 		}
 		
-		Delay(4000);
+		Delay(3000);
 		ClearConsole();
 	    return;
 	

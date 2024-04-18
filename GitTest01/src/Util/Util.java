@@ -123,4 +123,15 @@ public class Util {
     	System.out.println();
 	}
 	
+    public static void setEncoding() {
+        try {
+           ProcessBuilder pb = new ProcessBuilder("cmd", "/c", "chcp 65001");
+           Process startProcess = pb.inheritIO().start();
+           startProcess.waitFor();
+           
+      } catch (Exception e) {
+         e.printStackTrace();
+      }
+    }
+	
 }

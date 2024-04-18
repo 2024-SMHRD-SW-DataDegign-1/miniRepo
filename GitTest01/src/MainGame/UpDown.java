@@ -19,8 +19,6 @@ public class UpDown {
 	      Scanner sc = new Scanner(System.in);
 	      int mLife = 6;
 
-	      Util.println("====1부터 100 사이 UpDownEvent!====");
-	      Util.println("기회는 6번!");
 	      int mTargetNum = 0; 
 	      while (mLife > 0) {
 	         
@@ -76,13 +74,13 @@ public class UpDown {
 	   System.out.println();
 	   Util.guideLine();
 	         
-	         
-	         
-	  
+	         	  
 	         if(i==1)
 	         {
 	            i--;
 	            Util.println("1부터 100사이의 정수를 입력하세요 >> ");
+	            Util.println("====1부터 100 사이 UpDownEvent!====");
+	  	        Util.println("기회는 6번!");
 	         }
 	         else {
 
@@ -128,9 +126,32 @@ public class UpDown {
 	         
 	      }
 	      
+	  	    
 	      }
+	      Delay(3000);
+	      ClearConsole();
+	      
 	      return false;
+	     
+	      
 	   } 
+	   
+	   public void Delay(int MilTime)
+	   {
+	      try
+	      {
+	         Thread.sleep(5000);
+	         
+	      }
+	      catch(InterruptedException  e)
+	      {
+	         e.printStackTrace();
+	      }
+	   }
+	   
+	   
+	   
+	   
 	   public void ClearConsole() {
 	        try {
 	           ProcessBuilder pb = new ProcessBuilder("cmd", "/c", "cls");

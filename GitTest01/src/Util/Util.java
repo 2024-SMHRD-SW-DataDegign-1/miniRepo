@@ -4,6 +4,8 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 
+import javazoom.jl.player.MP3Player;
+
 
 
 
@@ -68,7 +70,7 @@ public class Util {
 	// 구분선 출력을 위한 메소드
 	public static void guideLine()
 	{
-		for(int i = 0; i< mWidth; i++)
+		for(int i = 0; i< mWidth-1; i++)
 		{
 			System.out.print("*");
 		}
@@ -119,7 +121,7 @@ public class Util {
 	{
     	System.out.println();
     	Util.println("직급 : "+ level + "\t\t\t\t스트레스 : " + 스트레스 + "%\t\t"
-    			+ "\t\t\t 경험치 : [" + setExp(exp%100)   + "]");
+    			+ "\t\t\t경험치 : [" + setExp(exp%100)   + "]");
     	System.out.println();
 	}
 	
@@ -133,5 +135,8 @@ public class Util {
          e.printStackTrace();
       }
     }
-	
+    public static MP3Player MP3Player2(){
+    MP3Player mp3 = new MP3Player();
+	return mp3;
+    }
 }

@@ -89,10 +89,9 @@ Util.guideLine();
 			break;
 		}
 		
-	 return;
+		ClearConsole();
+	    return;
 	
-	
-	 
 	}
 	   public void ClearConsole() {
 	        try {

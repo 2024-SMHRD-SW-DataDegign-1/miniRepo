@@ -86,8 +86,8 @@ Util.guideLine();
 			break;
 		}
 		
-	 return;
-	
+		ClearConsole();
+	    return;
 	
 	 
 	}

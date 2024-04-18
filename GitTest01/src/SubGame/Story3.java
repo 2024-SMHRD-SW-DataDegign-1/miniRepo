@@ -44,7 +44,7 @@ public class Story3 {
 			break;
 			
 		}
-		
+		ClearConsole();
 	}
 	
     private void showConsole()
@@ -80,5 +80,16 @@ public class Story3 {
 		Util.print(value);
 
 		Util.guideLine();
+    }
+    
+    public void ClearConsole() {
+        try {
+           ProcessBuilder pb = new ProcessBuilder("cmd", "/c", "cls");
+           Process startProcess = pb.inheritIO().start();
+           startProcess.waitFor();
+           
+      } catch (Exception e) {
+         e.printStackTrace();
+      }
     }
 }

@@ -167,13 +167,13 @@ public class Ex02 {
 						continue;
 					}
 				}
-				else if(choice == 2)
+				else if(choice == 3)
 				{  
 
 					//thr = null;
 					break;
 				}
-				else if(choice == 3)
+				else if(choice == 2)
 				{
 					ClearConsole();
 					Util.guideLine();

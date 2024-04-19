@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
+import ContinueArt.ContinueArt;
 import DB.DAO;
 import DB.DTO;
 import MainGame.SentenceGame;
@@ -54,6 +55,7 @@ public class Ex02 {
 	static DAO dao = new DAO();
 	static Scanner sc = new Scanner(System.in);
 	static boolean isGame = false;
+	static ContinueArt art = new ContinueArt();
 	static String[] str = 
 		{
 
@@ -259,7 +261,8 @@ public class Ex02 {
 	}
 	
 	public static void isContinue()
-	{
+	{ 
+		art.ArtContinue();
 		System.out.println();
 		Util.println("게임이 종료되었습니다 계속 하실건가요?");
 		Util.println("1. 계속할래요 \t 2. 그만할래요");
@@ -294,6 +297,7 @@ public class Ex02 {
 			e.printStackTrace();
 		}
 	}
+
 
 }
 

@@ -16,7 +16,7 @@ public class DTO {
 	
 
 	// 2. 메소드
-	public DTO(int user_id, int exp, int stress, Date firstTime, Date lastTime, String nickname, String timeline) {
+	public DTO(int user_id, int exp, int stress, Date firstTime, Date lastTime, String nickname) {
 		this.user_id = user_id;
 		this.exp = exp;
 		this.stress = stress;

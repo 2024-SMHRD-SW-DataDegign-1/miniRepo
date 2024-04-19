@@ -86,7 +86,7 @@ public class DAO {
 				String nickname = rs.getString(6);
 				String timeline = rs.getString(7);
 				// 조회해 온 결과(rs)에 담겨 있는 데이터를 DTO에 옮겨서 하나로 묶음
-				dto = new DTO(id, exp, stress, firstTime, lastTime, nickname, timeline);
+				dto = new DTO(id, exp, stress, firstTime, lastTime, nickname);
 				list.add(dto);
 			}
 		} catch (Exception e) {
@@ -173,24 +173,14 @@ public class DAO {
 	 * @param
 	 * @return 
 	 * */
-	public void signUp(String nickname) {
-		String sql = "INSERT INTO game_user (nickname) VALUES (?)";
-		int row = 0;
-		try {
-			conn();
-			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, nickname);
-			row = psmt.executeUpdate();
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			dbClose();
-		}
-		if(row > 0) {
-			// System.out.println("타임라인 수정 성공!");
-		} else {
-			// System.out.println("타임라인 수정 실패!");
-		}
+	public String signUp() {
+		
+		
+		String result = "";
+		
+		
+		
+		return result;
 	}
 	
 	

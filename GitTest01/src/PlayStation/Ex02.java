@@ -136,6 +136,7 @@ public class Ex02 {
 				Util.guideLine();
 				System.out.println();
 				Util.println("1. 게임 시작 \t 2. 닉네임 추가 설정 \t 3.종료");
+
 				int choice = sc.nextInt();
 				if(choice == 1)
 				{ 		
@@ -276,7 +277,48 @@ public class Ex02 {
 				System.out.println();
 				setTime();
 			}
-
+			String aaa = dao.RankCache();
+			if(aaa.equals("사장"))
+			{
+				String[] str10 = {"사장이 되신걸 축하드립니다~"};
+				String[] str11 = {"GAME CLEAR!"};
+				String[] str12 = Util.setMiddle(str10);
+				String[] str13 = Util.setMiddle(str11);
+;				ClearConsole();
+				Util.guideLine();
+				System.out.println();
+				System.out.println();
+				System.out.println();
+				System.out.println();
+				System.out.println();
+				System.out.println();
+				System.out.println();
+				System.out.println();
+				System.out.println();
+				System.out.println();
+				System.out.println();
+				System.out.println();
+				System.out.println();
+				Util.setMiddle(args);
+				Util.print(str12);
+				Util.print(str13);
+				System.out.println();
+				System.out.println();
+				System.out.println();
+				System.out.println();
+				System.out.println();
+				System.out.println();
+				System.out.println();
+				System.out.println();
+				System.out.println();
+				System.out.println();
+				System.out.println();
+				System.out.println();
+				System.out.println();
+				
+				Util.guideLine();
+				break;
+			}
 		}
 		thr.Pause();
 		

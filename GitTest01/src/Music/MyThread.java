@@ -1,4 +1,6 @@
 package Music;
+
+import java.io.File;
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -21,15 +23,18 @@ public class MyThread {
 	boolean isStart =false;
 	public void run()
 	{
-		 String[] List = 
-			{
-					"C:\\Users\\smhrd\\git\\miniRepo\\GitTest01\\player\\bgm.mp3",
-					"C:\\Users\\smhrd\\git\\miniRepo\\GitTest01\\player\\bgm2.mp3",
-					"C:\\Users\\smhrd\\git\\miniRepo\\GitTest01\\player\\bgm3.mp3",
-					"C:\\Users\\smhrd\\git\\miniRepo\\GitTest01\\player\\bgm4.mp3",
-					"C:\\Users\\smhrd\\git\\miniRepo\\GitTest01\\player\\bgm5.mp3"
-					
-			};
+		File file = new File(".");
+		
+	   String currentPaht = System.getProperty ( "user.home" ) ;
+       String[] List = 
+         {
+             currentPaht+"\\git\\miniRepo\\GitTest01\\player\\bgm.mp3",
+               currentPaht+"\\git\\miniRepo\\GitTest01\\player\\bgm2.mp3",
+               currentPaht+"\\git\\miniRepo\\GitTest01\\player\\bgm3.mp3",
+               currentPaht+"\\git\\miniRepo\\GitTest01\\player\\bgm4.mp3",
+               currentPaht+"\\git\\miniRepo\\GitTest01\\player\\bgm5.mp3"
+               
+         };
 			 play = Util.MP3Player2();
 
 ;
@@ -65,7 +70,7 @@ public class MyThread {
 			}
 			
 				};
-			t.schedule(task, 2000,2000);
+			t.schedule(task, 30000,30000);
 			play.play(List[0]);
 	}
 	

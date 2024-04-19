@@ -82,15 +82,18 @@ public class SentenceGame {
 		
 		Util.println("문장 : " + mAnswerList[idx]);
 		
-		Util.println("입력 : ");
-		String value = mSc.next();
+		Util.print("입력 : ");
+		String value = mSc.nextLine();
 		
 		if(!mAnswerList[idx].equals(value))
 		{
 			mLife--;
-			
+			showResult("땡!");
 		}
-		Util.print("남은 목숨 : " + mLife);
+		else
+		{
+			showResult("정답!");
+		}
 		Delay(2000);
     }
     
@@ -129,6 +132,11 @@ public class SentenceGame {
 		System.out.println();
 		System.out.println();
 		Util.guideLine();
+    }
+    
+    private void showResult(String result)
+    {
+    	Util.print(result +" 남은 목숨 : " + mLife);
     }
     
 	public void Delay(int MilTime)

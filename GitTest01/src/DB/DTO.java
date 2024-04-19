@@ -12,6 +12,7 @@ public class DTO {
 	private Date firstTime;
 	private Date lastTime;
 	private String nickname;
+	private String timeline;
 	
 
 	// 2. 메소드
@@ -22,10 +23,19 @@ public class DTO {
 		this.firstTime = firstTime;
 		this.lastTime = lastTime;
 		this.nickname = nickname;
+		this.timeline = timeline;
 	}
 
 	public String getNickname() {
 		return nickname;
+	}
+
+	public String getTimeline() {
+		return timeline;
+	}
+
+	public void setTimeline(String timeline) {
+		this.timeline = timeline;
 	}
 
 	public void setNickname(String nickname) {

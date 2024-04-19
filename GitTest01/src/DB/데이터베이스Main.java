@@ -19,13 +19,16 @@ public class 데이터베이스Main {
 		ArrayList<DTO> data = dao.searchUser();
 
 		// 경험치
+		int id = data.get(0).getUser_id();
 		String nickname = data.get(0).getNickname();
 		int exp = data.get(0).getExp();
 		int stress = data.get(0).getStress();
 		Date firstTime = data.get(0).getFirstTime();
 		Date lastTime = data.get(0).getLastTime();
+		String timeline = data.get(0).getTimeline();
 
-		System.out.println("경험치 \t 스트레스 \t 생성시간 \t\t 현재시간");
-		System.out.println(exp + " \t " + stress + " \t " + firstTime + " \t " + lastTime +  nickname);
+//		System.out.println("id \t 경험치 \t 스트레스 \t 생성시간 \t\t 현재시간 \t\t 닉네임 \t\t 타임라인");
+//		System.out.println(id + " \t " + exp + " \t " + stress + " \t " + firstTime + " \t " + lastTime + " \t "
+//				+ nickname + " \t " + timeline);
 	}
 }

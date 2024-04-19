@@ -86,7 +86,7 @@ Util.guideLine();
 			break;
 		case 3:
 			Util.println("너무 mz같았나.. 스트레스다!!");
-			dao.updateUser(exp, stress - 20);
+			dao.updateUser(exp, stress + 20);
 			break;
 		}
 		

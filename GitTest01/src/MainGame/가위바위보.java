@@ -15,7 +15,10 @@ public class 가위바위보 {
 	private static final String[] GESTURES = { "가위", "바위", "보" };
 
 	int Life;
+	private void syso() {
+		// TODO Auto-generated method stub
 
+	}
 	public 가위바위보() {
 		Life = 3;
 	}

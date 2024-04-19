@@ -34,7 +34,7 @@ public class SentenceGame {
 	{
 		boolean result = true;
 		DAO dao = new DAO();
-
+		System.out.println();
 		ArrayList<DTO> data = dao.searchUser();
 		// 경험치
 		int exp = data.get(0).getExp();

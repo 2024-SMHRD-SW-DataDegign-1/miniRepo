@@ -164,6 +164,7 @@ public class Ex02 {
 					isContinue();
 					nextTime();
 				}
+				System.out.println();
 			}
 
 		}
@@ -213,6 +214,7 @@ public class Ex02 {
 	
 	public static void isContinue()
 	{
+		System.out.println();
 		Util.println("게임이 종료되었습니다 계속 하실건가요?");
 		Util.println("1. 계속할래요 \t 2. 그만할래요");
 		int choice = sc.nextInt();

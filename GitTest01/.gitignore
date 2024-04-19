@@ -1,2 +1,3 @@
 /bin/
-src/PlayStation/*.java
+/src/PlayStation/*.java/
+.classpath

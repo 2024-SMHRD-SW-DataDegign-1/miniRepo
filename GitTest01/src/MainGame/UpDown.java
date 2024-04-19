@@ -40,8 +40,8 @@ public class UpDown {
                     String timeline = data.get(0).getTimeline();
 
                Util.showState(dao.RankCache(),stress, exp,timeline);
-  
-	              
+
+	         
                //아스키코드
 	            
 	   Util.guideLine();

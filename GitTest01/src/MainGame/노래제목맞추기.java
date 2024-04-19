@@ -28,22 +28,20 @@ public class 노래제목맞추기 {
 		initTextData();
 	}
 
-	// 노래 가사 데이터 초기화
-	private void initTextData() {
-		// 가사 데이터를 초기화하는 코드를 작성합니다.
-		mData = new String[][] {
-			// TODO : 영어 제목의 노래를 집어넣어주세요!
-			{ "Smarter baby, smarter", "하날 보면 열까지", "간파해서 돌파하지", "smart", "s____" },
-			{ "Smarter baby, smarter", "하날 보면 열까지", "간파해서 돌파하지", "smart", "s____" },
-			{ "Smarter baby, smarter", "하날 보면 열까지", "간파해서 돌파하지", "smart", "s____" },
-			{ "Smarter baby, smarter", "하날 보면 열까지", "간파해서 돌파하지", "smart", "s____" },
-			{ "Smarter baby, smarter", "하날 보면 열까지", "간파해서 돌파하지", "smart", "s____" },
-			{ "Smarter baby, smarter", "하날 보면 열까지", "간파해서 돌파하지", "smart", "s____" },
-			{ "Smarter baby, smarter", "하날 보면 열까지", "간파해서 돌파하지", "smart", "s____" },
-};
+	 // 노래 가사 데이터 초기화
+	   private void initTextData() {
+	      // 가사 데이터를 초기화하는 코드를 작성합니다.
+	      mData = new String[][] {
+	            // TODO : 영어 제목의 노래를 집어넣어주세요!
+	            { "Smarter baby, smarter", "하날 보면 열까지", "간파해서 돌파하지", "smart", "s____" },
+	            { "낭비하지 마, 네 시간은 은행", "서둘러서 정리해, 걔는 real bad", "받아주면 안돼, no, you better trust me", "eta", "e__" },
+	            { "Baby (baby), got me looking so crazy (crazy)", "빠져버리는 daydream (daydream)",
+	                  "Got me feeling you 너도 말해줄래?", "hype boy", "h___ ___" },
+	            { "힘껏 내팽개친 roses, 말론 안 통하지 역시 어쩜 이리 안 변해", "인정 같은 소린 됐고", "이쯤에서 끝내 let go 인내심도 out of space (space)",
+	                  "maniac", "m_____" },
+	            { "다친대도, 길을 걸어, kiss me", "쉽지 않음 내가 쉽게 easy", "Stage 위엔 불이 튀어 내 body", "easy", "e___" }, };
 
-	}
-
+	   }
 	
 	
 	public boolean play() {

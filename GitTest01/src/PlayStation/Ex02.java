@@ -121,17 +121,22 @@ public class Ex02 {
 					Util.guideLine();
 					System.out.println();
 					System.out.println();
+					System.out.println();
+					System.out.println();
 					String[] value1 = Util.setMiddle(loginView);
 					
 					Util.print(value1);
 					
 		            System.out.println();
 		            System.out.println();
+		            System.out.println();
 					Util.guideLine();
-					Util.print("게임 진행할 유저의 닉네임을 입력해 주세요!!");
+					Util.println("게임 진행할 유저의 닉네임을 입력해 주세요!!");
+					Util.print("닉네임 : ");
+					ArrayList<DTO> data = dao.searchUser();
 					String inputName = sc.next();
-//					String name = dao.compareName();
-//					if(name.equals(inputName))
+//					boolean isName = dao.compareName();;
+//					if(isName)
 //					{
 //						isGame = true;
 //					}
@@ -140,6 +145,7 @@ public class Ex02 {
 //						Util.println("잘못된 닉네임을 입력했습니다 다시 입력해주세요!");
 //						continue;
 //					}
+					isGame = true;
 				}
 				else if(choice == 2)
 				{  
@@ -186,7 +192,7 @@ public class Ex02 {
 					// 메인 이벤트
 					int gameNum = rand.nextInt(4);
 					boolean result = false;
-					switch(gameNum)
+					switch(0)
 					{
 					case 0:
 						result = main1.Play();

@@ -32,6 +32,7 @@ public class SentenceGame {
 	
 	public boolean Play()
 	{
+		mLife = 5;
 		boolean result = true;
 		DAO dao = new DAO();
 		System.out.println();

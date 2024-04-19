@@ -117,11 +117,11 @@ public class Util {
 		return result;
 	}
 	
-	public static void showState(String level, int 스트레스, int exp)
+	public static void showState(String level, int 스트레스, int exp, String time)
 	{
     	System.out.println();
-    	Util.println("직급 : "+ level + "\t\t\t\t스트레스 : " + 스트레스 + "%\t\t"
-    			+ "\t\t\t경험치 : [" + setExp(exp%100)   + "]");
+    	Util.println("직급 : "+ level + "\t\t스트레스 : " + 스트레스 + "%\t\t"
+    			+ "\t경험치 : [" + setExp(exp%100)   + "]"+ "\t\t 현재시간 : " + time);
     	System.out.println();
 	}
 	

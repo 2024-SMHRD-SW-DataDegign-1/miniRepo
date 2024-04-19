@@ -30,8 +30,8 @@ public class Story3 {
 		// 경험치
 		int exp = data.get(0).getExp();
 		int stress = data.get(0).getStress();
-
-		Util.showState("인턴", exp, stress);
+		String time = data.get(0).getTimeline();
+		Util.showState("인턴", exp, stress, time);
 
 		showConsole();
 
@@ -48,6 +48,8 @@ public class Story3 {
 			break;
 			
 		}
+		
+		ClearConsole();
 		
 	}
 	
@@ -85,4 +87,15 @@ public class Story3 {
 
 		Util.guideLine();
     }
+    
+	public static void ClearConsole() {
+		try {
+			ProcessBuilder pb = new ProcessBuilder("cmd", "/c", "cls");
+			Process startProcess = pb.inheritIO().start();
+			startProcess.waitFor();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }

@@ -228,6 +228,15 @@ public class Ex02 {
 					}
 					isContinue();
 					nextTime();
+					ArrayList<DTO> data = dao.searchUser();
+					// 경험치
+					int exp = data.get(0).getExp();
+					int stress = data.get(0).getStress();
+					if(stress >= 100)
+					{
+						stress -= 100;
+					}
+					dao.updateUser(exp, stress);
 				}
 				else
 				{
@@ -306,10 +315,7 @@ public class Ex02 {
 		{
 			num = 0;
 		}
-		if(stress >= 100)
-		{
-			stress -= 100;
-		}
+
 		dao.updateUser(num, stress);
 	}
 	

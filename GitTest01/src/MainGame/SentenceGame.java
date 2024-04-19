@@ -40,12 +40,10 @@ public class SentenceGame {
 		int exp = data.get(0).getExp();
 		int stress = data.get(0).getStress();
 		String level = dao.RankCache();
-		
+		String time = data.get(0).getTimeline();
 		for(int i =0; i< mAnswerList.length; i++)
 		{
-
-			
-			Util.showState(level,stress, exp);
+			Util.showState(level,stress, exp, time);
 			showConsole();
 			
 			System.out.println();

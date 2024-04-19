@@ -48,13 +48,14 @@ public class SentenceGame {
 			
 			System.out.println();
 			playGame(i);
+			ClearConsole();
 			if(mLife == 0)
 			{
 				result = false;
 				break;
 			}
 			
-			ClearConsole();
+
 		}
 
 		

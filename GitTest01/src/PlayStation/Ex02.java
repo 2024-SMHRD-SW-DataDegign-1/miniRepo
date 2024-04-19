@@ -22,7 +22,7 @@ public class Ex02 {
 
    static MyThread thr = new MyThread();
    
-	//String[] mLevel = {"인턴", "사원", };
+	String[] mLevel = {"인턴", "사원", };
 	static String[] mTime = {"출근", "오전", "점심", "오후", "퇴근"};
 	static int mTimeIdx = 0;
 	

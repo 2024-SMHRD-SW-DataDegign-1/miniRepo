@@ -86,8 +86,9 @@ public class DAO {
 				int stress = rs.getInt(3);
 				Date firstTime = rs.getDate(4);
 				Date lastTime = rs.getDate(5);
+				String nickname = rs.getString(6);
 				// 조회해 온 결과(rs)에 담겨 있는 데이터를 DTO에 옮겨서 하나로 묶음
-				dto = new DTO(id, exp, stress, firstTime, lastTime);
+				dto = new DTO(id, exp, stress, firstTime, lastTime, nickname);
 				list.add(dto);
 			}
 		} catch (Exception e) {

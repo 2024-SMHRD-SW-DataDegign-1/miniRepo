@@ -11,15 +11,25 @@ public class DTO {
 	private int stress;
 	private Date firstTime;
 	private Date lastTime;
+	private String nickname;
+	
 
 	// 2. 메소드
-	public DTO(int user_id, int exp, int stress, Date firstTime, Date lastTime) {
-		super();
+	public DTO(int user_id, int exp, int stress, Date firstTime, Date lastTime, String nickname) {
 		this.user_id = user_id;
 		this.exp = exp;
 		this.stress = stress;
 		this.firstTime = firstTime;
 		this.lastTime = lastTime;
+		this.nickname = nickname;
+	}
+
+	public String getNickname() {
+		return nickname;
+	}
+
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
 	}
 
 	// Getter

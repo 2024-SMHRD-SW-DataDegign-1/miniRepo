@@ -82,7 +82,7 @@ Util.guideLine();
 		case 2: 
 			Util.println("이렇게 말하면 안되는 거였나,,, 스트레스...");
 			// 경험치는 변화 없지만 스트레스 감소
-			dao.updateUser(exp, stress - 20);
+			dao.updateUser(exp, stress + 20);
 			break;
 		case 3:
 			Util.println("너무 mz같았나.. 스트레스다!!");

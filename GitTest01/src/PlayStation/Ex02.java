@@ -294,7 +294,7 @@ public class Ex02 {
 		switch(type)
 		{
 		case mVictory:
-			num = exp + 20;
+			num = exp + 50;
 			break;
 		case mLose:
 			num = exp - 10;

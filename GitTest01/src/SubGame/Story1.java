@@ -18,13 +18,13 @@ public class Story1 {
 		// 경험치
 		int exp = data.get(0).getExp();
 		int stress = data.get(0).getStress();
-		Date firstTime = data.get(0).getFirstTime();
-		Date lastTime = data.get(0).getLastTime();
 
 		Util.showState(dao.RankCache(), stress, exp);
 		// 아스키 코드 입력
 		Util.guideLine();
-		String[] str = { "⢽⣺⣳⣷⣻⢽⣳⢿⢽⢯⣟⡾⣯⡷⣵⣪⡢⡑⡡⢊⢘⠔⡘⢔⠡⡑⢅⢊⠢⡑⠜⡼⣝⣷⡻⡮⡯⡗⡯⣫⢝⡭⡣⡫⢯⣳⢵⠱⣱⢲⡳⡵⣗⢽⡰⡨⢊⢂⢂⢑⢑⡽⣮⢒⠌⡢⠢⠱⡨⡮⡿⡽⣽⣻",
+		String[] str = { 
+				
+				"⢽⣺⣳⣷⣻⢽⣳⢿⢽⢯⣟⡾⣯⡷⣵⣪⡢⡑⡡⢊⢘⠔⡘⢔⠡⡑⢅⢊⠢⡑⠜⡼⣝⣷⡻⡮⡯⡗⡯⣫⢝⡭⡣⡫⢯⣳⢵⠱⣱⢲⡳⡵⣗⢽⡰⡨⢊⢂⢂⢑⢑⡽⣮⢒⠌⡢⠢⠱⡨⡮⡿⡽⣽⣻",
 				"⣮⡾⣷⣻⢾⡽⡾⣝⡯⣯⢷⣟⣯⢿⡽⣾⢽⣽⡪⡣⡣⡊⢌⠢⡑⢌⢂⠢⡑⠌⢜⢮⣳⢗⣯⣻⢺⠹⡉⡢⢑⢐⢁⠪⡘⡜⡮⡹⡐⣥⣣⣙⢜⢱⠹⡪⡢⢀⡐⢕⢗⣿⢽⠐⢌⢐⠅⠣⣞⡿⡽⡝⣗⡯",
 				"⣻⣽⣯⡿⣯⢿⣽⣳⢿⢽⣽⡺⣞⡯⡯⡳⡻⣺⣽⣎⢎⡎⣔⣡⣪⢴⢴⣕⣞⡮⠷⡣⢯⣗⢯⢪⢊⠪⡐⠌⡂⢅⡢⡥⣂⠪⢸⢐⠕⣗⣗⣷⡫⢏⠏⢳⢯⣟⡾⡯⠿⡺⡑⠌⡂⡂⠪⢸⡝⡎⡮⡺⡸⡺",
 				"⣻⣗⣯⣿⣽⣟⣾⣝⣯⣟⡾⣝⢷⢝⢮⢫⢪⢺⣟⡾⣕⢯⠗⢫⠚⡩⢡⣁⣢⡢⣵⠨⡚⡎⡍⡍⠝⢕⢪⠨⡪⡣⡃⡊⡄⡊⠨⡆⡃⢔⢐⠨⠨⠂⢌⠂⠡⢀⢋⢰⢨⠎⡎⡐⠔⡨⢘⡞⡕⡕⡱⡸⡸⡸",
@@ -42,7 +42,9 @@ public class Story1 {
 				"⢷⠵⠶⠒⠀⠀⠀⠐⠶⢶⡫⡒⠀⠀⠛⠀⠀⢸⠁⠀⢀⣸⠂⠀⡆⠀⢸⠀⠀⡃⠀⢸⣏⢞⣎⢗⣽⠀⠀⠒⠂⠀⢸⠀⠀⢸⠢⢤⡠⠤⠤⢤⣬⡇⠀⠀⣗⠇⠀⠀⣯⢢⢣⢪⠀⠀⢸⣇⢀⣰⠀⠀⣸⢧",
 				"⡽⣅⣀⣠⣴⢞⡶⣤⣀⣀⡯⣪⠂⠂⠂⠢⠂⠚⠂⠄⢼⢽⠄⠀⡇⠀⠈⠀⠀⡅⠀⢸⣞⢵⡳⣝⡞⠤⠤⠤⠤⠤⠼⡀⠀⢸⡑⠌⠀⢀⡀⠀⢹⡆⠀⠀⠉⡇⠀⠀⣿⢸⢸⢸⠀⠀⠀⣹⢽⠊⠀⢠⣟⢞",
 				"⣽⠈⠈⠈⠈⠈⠈⠀⠁⠁⢽⡪⠂⠒⠒⠂⠒⠂⠂⠀⢸⣽⠀⠀⡇⠀⢸⠀⠀⠆⠀⢸⣞⣗⢽⡺⣎⣄⡀⠀⠀⡠⡠⠀⠀⢸⡪⠀⠀⢸⡇⠀⢸⡇⠀⠀⣿⠇⠀⠀⣯⣪⣎⣮⠀⠀⢸⡯⣇⣀⣠⡿⡮⣻",
-				"⣾⢷⡾⣶⡇⠀⠀⣾⢶⡺⣞⢽⠀⠀⠐⠐⠂⠒⠐⠂⢺⢾⣅⡀⠀⣀⡾⠀⠀⡃⠀⢸⣗⣗⡯⣯⢷⢯⡇⠀⢀⣇⣀⠀⠀⢸⡪⢢⡀⠀⠀⣀⡼⡇⠀⠀⣿⡃⠀⡀⠀⠀⠀⣺⠀⠀⢸⡯⡎⠀⢈⣯⢯⡯", };
+				"⣾⢷⡾⣶⡇⠀⠀⣾⢶⡺⣞⢽⠀⠀⠐⠐⠂⠒⠐⠂⢺⢾⣅⡀⠀⣀⡾⠀⠀⡃⠀⢸⣗⣗⡯⣯⢷⢯⡇⠀⢀⣇⣀⠀⠀⢸⡪⢢⡀⠀⠀⣀⡼⡇⠀⠀⣿⡃⠀⡀⠀⠀⠀⣺⠀⠀⢸⡯⡎⠀⢈⣯⢯⡯", 
+				
+};
 		String[] value = Util.setMiddle(str);
 
 		Util.print(value);
@@ -51,9 +53,6 @@ public class Story1 {
 		System.out.println();
 
 		Util.guideLine();
-
-		System.out.println("경험치 \t 스트레스 \t 생성시간 \t\t 현재시간");
-		System.out.println(exp + " \t " + stress + " \t " + firstTime + " \t " + lastTime);
 
 		Scanner sc = new Scanner(System.in);
 
@@ -77,7 +76,7 @@ public class Story1 {
 			dao.updateUser(exp, stress - 20);
 			break;
 			
-		}Delay(4000);
+		}Delay(2000);
 		ClearConsole();
 		return;
 		
@@ -97,7 +96,7 @@ public class Story1 {
 	   {
 	      try
 	      {
-	         Thread.sleep(5000);
+	         Thread.sleep(MilTime);
 	         
 	      }
 	      catch(InterruptedException  e)

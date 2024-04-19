@@ -29,8 +29,6 @@ public class 가위바위보 {
 		// 경험치
 		int exp = data.get(0).getExp();
 		int stress = data.get(0).getStress();
-		Date firstTime = data.get(0).getFirstTime();
-		Date lastTime = data.get(0).getLastTime();
 
 		// 출력문 입력
 		// result는 최종 결과 값
@@ -43,7 +41,7 @@ public class 가위바위보 {
 			// 아스키 코드 입력
 			Util.guideLine();
 			String[] str = {
-					"⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⡽",
+					
 					"⢿⣺⣽⢾⣽⢾⣽⢾⣽⢾⣽⢾⣽⢾⣽⢾⣽⢾⣽⢾⣽⢾⣽⢾⣽⡾⡻⡺⣻⢾⡽⣾⡽⣾⡽⣾⡽⣾⡽⣾⡽⣾⡽⣾⡽⣾⡽⣾⡽⣾⡽⣾⡽⣾⡽⣾⡽⣾⡽⣾⡽⣾⡽⣾⡽⣾⡽⣾⡽⣾⡽⣾⡽⣾⡽⣾⡽⣾⡽⣾⡽⣾⡽⣾⡽⣾⡽⣾⡽⣾⡽⣾⡽⣾⡽⣾⡽⣾⢽⣳",
 					"⢿⡽⣾⣻⢾⣻⢾⣻⣞⡿⣞⡿⣞⡿⣞⡿⣞⡿⣞⡿⣞⡿⣞⡿⡑⢕⢌⡒⣜⣯⢿⣳⣟⡷⣟⡷⣟⡷⣟⡷⣟⡷⣟⡷⣟⡷⣟⡷⣟⡷⣟⡷⣟⡷⣟⡷⣟⡷⣟⡷⣟⡷⣟⡷⣟⡷⣟⡷⣟⡷⣟⡷⣟⡷⣟⡷⡿⠳⢿⣳⣟⡷⣟⡷⣟⡷⣟⡷⣟⡷⣟⡷⣟⡷⣟⡷⣿⢽⣻⣳",
 					"⣯⢿⡽⣾⣻⣽⣻⣗⣯⡿⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⡟⡍⡆⡣⡑⡆⢎⣾⡽⣯⡷⡿⢽⣯⢿⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⠽⡿⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⣻⣽⠫⠀⠅⡈⡷⣯⢿⣽⣻⢽⣻⣽⣻⣽⣻⣽⣻⣽⣻⡽⣯⢿⡽⣯⣗",
@@ -61,21 +59,21 @@ public class 가위바위보 {
 					"⣯⡿⣯⡷⣿⣽⢾⡽⣯⢿⣽⢯⣟⡿⣗⣧⣎⡗⣧⡷⣮⣶⣳⢿⡽⣯⢿⣞⣿⣽⣻⣽⣻⣽⢯⣿⢽⣻⣽⣟⣾⣳⣟⣯⢿⣳⣟⣯⡿⣽⡯⣿⡽⣾⣻⣽⢿⣽⣻⢾⣻⣽⡯⣿⣞⣷⡄⠅⠌⡃⠇⣆⠂⠅⡂⢌⢐⠠⡈⡂⢅⣼⣺⣗⡿⣾⣻⣽⢯⣿⢽⣷⣻⣟⡷⣟⣯⣿⢽⣏",
 					"⣿⢽⡷⣟⣿⣺⣟⣿⡽⣿⢽⣯⢿⣽⢿⣽⢾⣻⣯⣟⣷⣻⣾⣻⣽⢿⣽⣻⣞⣷⣻⢷⣻⣽⡯⣟⣿⣽⢾⣳⣯⡷⣿⢽⣻⣽⢯⡷⣟⣯⣿⣳⡿⣯⡷⣟⣿⣺⣯⢿⣻⣞⣿⣳⣿⣺⣟⣿⣴⡠⡑⡈⠳⠥⣂⣂⣂⣢⣦⢾⣻⣞⣷⣻⣽⣯⢷⣟⣯⡿⣽⣾⣳⡿⣽⣟⣷⣻⣯⣗",
 					"⣿⡽⣟⣯⣷⣟⣷⢯⣿⡽⡿⣾⣻⣽⣟⣾⣟⣿⣺⣽⣾⣻⣞⡿⣾⣻⢷⣻⣽⢾⣻⣻⣽⣾⣻⣯⡷⣟⣿⣽⢾⣻⣽⣟⣯⣟⣯⣿⣻⢷⣯⡷⣿⢷⣟⣯⣷⢿⣾⣻⣯⡷⣟⣷⣻⣾⣽⢾⣳⡿⣷⢮⣬⣨⣜⣿⣻⣽⡾⣿⣽⢾⡯⣿⣺⣽⣯⣟⣷⣟⣿⣺⡷⣟⣿⣺⣷⣻⣞⡧",
-					"⣯⡿⣯⡿⣞⣷⣟⣯⣷⢿⣻⣯⢿⡾⣽⡾⣷⣻⣽⡾⣷⣻⢷⣟⣯⣿⣻⣽⣯⢿⣯⢿⣳⣯⣷⣯⢿⣯⡷⣟⣿⢯⣷⣟⣷⢿⣽⢾⣯⡿⣾⣻⣽⣯⢿⣽⢾⡿⣞⣿⣺⣟⣯⣯⣷⢿⣞⣿⢯⡿⣯⣿⣳⡿⣽⣾⣻⣾⣻⢷⣻⣯⡿⣯⡿⣞⣷⢿⣞⣷⣟⣷⣟⣯⣟⣷⢯⣷⣟⡯", };
+					
+					};
 			String[] value = Util.setMiddle(str);
 
 			Util.print(value);
-
-			System.out.println();
-			System.out.println();
-
+			
+            System.out.println();
+            System.out.println();
+            
 			Util.guideLine();
 
-			System.out.println("경험치 \t 스트레스 \t 생성시간 \t\t 현재시간");
-			System.out.println(exp + " \t " + stress + " \t " + firstTime + " \t " + lastTime);
 			Scanner sc = new Scanner(System.in);
 
 			Util.println("======가위 바위 보 게임======");
+			Util.println("과장님이 심심하다며 찾아오셨다...");
 			Util.println("     무엇을 내시겠습니까?     ");
 			Util.println("     1.가위  2.바위 3.보  ");
 			int user = sc.nextInt();
@@ -103,10 +101,24 @@ public class 가위바위보 {
 				result = false;
 				return result;
 			}
+			Delay(2000);
 			ClearConsole();
 		}
 		return result;
 	}
+	
+	 public void Delay(int MilTime)
+	   {
+	      try
+	      {
+	         Thread.sleep(MilTime);
+	         
+	      }
+	      catch(InterruptedException  e)
+	      {
+	         e.printStackTrace();
+	      }
+	   }
 
 	public void ClearConsole() {
 		try {

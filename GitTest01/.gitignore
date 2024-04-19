@@ -1,12 +1,6 @@
 /bin/
-<<<<<<< HEAD
-<<<<<<< HEAD
+# Eclipse Core       
+.project 
+
+# JDT-specific (Eclipse Java Development Tools)      
 .classpath
-=======
-/src/PlayStation/*.java/
-.classpath
->>>>>>> branch 'main' of https://github.com/2024-SMHRD-SW-DataDegign-1/miniRepo.git
-=======
-/src/PlayStation/*.java/
-.classpath
->>>>>>> branch 'main' of https://github.com/2024-SMHRD-SW-DataDegign-1/miniRepo.git

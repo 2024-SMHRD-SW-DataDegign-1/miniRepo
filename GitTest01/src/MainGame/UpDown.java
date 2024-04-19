@@ -24,8 +24,7 @@ public class UpDown {
 	         
 	         //상태
 	          {
-	        		DAO dao = new DAO();
-	        		
+	        		DAO dao = new DAO();	        		
 	        		// 경험치와 스트레스를 수정하는 방법
 	        		//dao.updateUser(0, 0);
 	        		
@@ -128,7 +127,7 @@ public class UpDown {
 	      
 	  	    
 	      }
-	      Delay(3000);
+	      Delay(2000);
 	      ClearConsole();
 	      
 	      return false;
@@ -141,17 +140,12 @@ public class UpDown {
 	      try
 	      {
 	         Thread.sleep(5000);
-	         
-	      }
+	        }
 	      catch(InterruptedException  e)
 	      {
 	         e.printStackTrace();
 	      }
-	   }
-	   
-	   
-	   
-	   
+	   }	   	   	   
 	   public void ClearConsole() {
 	        try {
 	           ProcessBuilder pb = new ProcessBuilder("cmd", "/c", "cls");

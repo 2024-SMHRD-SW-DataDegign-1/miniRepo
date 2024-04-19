@@ -26,8 +26,9 @@ public class Story5 {
 		int stress = data.get(0).getStress();
 		Date firstTime = data.get(0).getFirstTime();
 		Date lastTime = data.get(0).getLastTime();
-
-		Util.showState(dao.RankCache(), stress, exp);
+		String timeline = data.get(0).getTimeline();
+		
+		Util.showState(dao.RankCache(), stress, exp ,timeline);
 
 		// 그림
 		Util.guideLine();

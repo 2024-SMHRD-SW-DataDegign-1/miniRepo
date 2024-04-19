@@ -10,7 +10,6 @@ import MainGame.SentenceGame;
 import MainGame.UpDown;
 import MainGame.가위바위보;
 import MainGame.구구단게임;
-import MainGame.노래제목맞추기;
 import Music.MyThread;
 import SubGame.Story1;
 import SubGame.Story2;
@@ -73,7 +72,6 @@ public class Ex02 {
 		UpDown main2 = new UpDown();
 		가위바위보 main3 = new 가위바위보();
 		구구단게임 main4 = new 구구단게임();
-		노래제목맞추기 main5 = new 노래제목맞추기();
 		
 	
 		while(true)
@@ -138,7 +136,7 @@ public class Ex02 {
 				else
 				{
 					// 메인 이벤트
-					int gameNum = rand.nextInt(5);
+					int gameNum = rand.nextInt(4);
 					boolean result = false;
 					switch(gameNum)
 					{
@@ -154,9 +152,6 @@ public class Ex02 {
 					case 3:
 						result = main4.play();
 						break;
-					case 4:
-						result = main5.play();
-						break;
 					}
 					if(result)
 					{
@@ -169,6 +164,7 @@ public class Ex02 {
 					isContinue();
 					nextTime();
 				}
+				System.out.println();
 			}
 
 		}
@@ -218,6 +214,7 @@ public class Ex02 {
 	
 	public static void isContinue()
 	{
+		System.out.println();
 		Util.println("게임이 종료되었습니다 계속 하실건가요?");
 		Util.println("1. 계속할래요 \t 2. 그만할래요");
 		int choice = sc.nextInt();

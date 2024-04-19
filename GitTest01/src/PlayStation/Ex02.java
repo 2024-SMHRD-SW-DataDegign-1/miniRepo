@@ -79,7 +79,7 @@ public class Ex02 {
 				if(mTimeIdx == 0 || mTimeIdx == 2 || mTimeIdx == 4)
 				{
 					// 서브 이벤트
-					int gameNum = rand.nextInt(4);
+					int gameNum = rand.nextInt(5);
 					switch(gameNum)
 					{
 					case 0:

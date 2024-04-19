@@ -161,7 +161,7 @@ public class Ex02 {
 			}
 			if(isGame)
 			{
-				
+				ClearConsole();
 				if(mTimeIdx == 0 || mTimeIdx == 2 || mTimeIdx == 4)
 				{
 					// 서브 이벤트

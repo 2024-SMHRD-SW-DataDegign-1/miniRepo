@@ -1,2 +1,7 @@
 /bin/
+<<<<<<< HEAD
 .classpath
+=======
+/src/PlayStation/*.java/
+.classpath
+>>>>>>> branch 'main' of https://github.com/2024-SMHRD-SW-DataDegign-1/miniRepo.git

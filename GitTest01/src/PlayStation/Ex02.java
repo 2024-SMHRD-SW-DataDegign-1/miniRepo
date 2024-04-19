@@ -267,6 +267,7 @@ public class Ex02 {
 					nextTime();
 				}
 				System.out.println();
+				setTime();
 			}
 
 		}

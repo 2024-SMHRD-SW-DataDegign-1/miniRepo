@@ -107,7 +107,7 @@ Util.guideLine();
 	   {
 	      try
 	      {
-	         Thread.sleep(5000);
+	         Thread.sleep(MilTime);
 	         
 	      }
 	      catch(InterruptedException  e)

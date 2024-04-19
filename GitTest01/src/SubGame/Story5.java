@@ -100,7 +100,7 @@ public class Story5 {
 
 	public void Delay(int MilTime) {
 		try {
-			Thread.sleep(5000);
+			Thread.sleep(MilTime);
 
 		} catch (InterruptedException e) {
 			e.printStackTrace();

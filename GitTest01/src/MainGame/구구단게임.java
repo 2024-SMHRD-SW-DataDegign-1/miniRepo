@@ -34,7 +34,12 @@ public class 구구단게임 { // 1
 	}
 
 	public boolean play() {
-
+		Random ran = new Random();
+		for (int i = 0; i < 5; i++) {
+			num1[i] = ran.nextInt(100) + 1;
+			num2[i] = ran.nextInt(10) + 1;
+		}
+		
 		DAO dao = new DAO();
 
 		ArrayList<DTO> data = dao.searchUser();
@@ -42,14 +47,13 @@ public class 구구단게임 { // 1
 		// 경험치
 		int exp = data.get(0).getExp();
 		int stress = data.get(0).getStress();
-		Date firstTime = data.get(0).getFirstTime();
-		Date lastTime = data.get(0).getLastTime();
+
 		String timeline = data.get(0).getTimeline();
 		
 		int people = -1;
 
 		Scanner sc = new Scanner(System.in);
-		Random ran = new Random();
+
 
 		boolean isNum = true;
 
@@ -156,7 +160,7 @@ public class 구구단게임 { // 1
 
 	public void Delay(int MilTime) {
 		try {
-			Thread.sleep(2000);
+			Thread.sleep(MilTime);
 
 		} catch (InterruptedException e) {
 			e.printStackTrace();

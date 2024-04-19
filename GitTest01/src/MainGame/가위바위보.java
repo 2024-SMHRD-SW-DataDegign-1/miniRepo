@@ -104,6 +104,7 @@ public class 가위바위보 {
 			}
 			if (Life == 0) {
 				result = false;
+				ClearConsole();
 				return result;
 			}
 			Delay(2000);

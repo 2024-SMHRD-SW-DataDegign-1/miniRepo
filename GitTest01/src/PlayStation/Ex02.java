@@ -10,6 +10,7 @@ import MainGame.SentenceGame;
 import MainGame.UpDown;
 import MainGame.가위바위보;
 import MainGame.구구단게임;
+import MainGame.노래제목맞추기;
 import Music.MyThread;
 import SubGame.Story1;
 import SubGame.Story2;
@@ -72,6 +73,7 @@ public class Ex02 {
 		UpDown main2 = new UpDown();
 		가위바위보 main3 = new 가위바위보();
 		구구단게임 main4 = new 구구단게임();
+		노래제목맞추기 main5 = new 노래제목맞추기();
 		
 	
 		while(true)
@@ -136,7 +138,7 @@ public class Ex02 {
 				else
 				{
 					// 메인 이벤트
-					int gameNum = rand.nextInt(4);
+					int gameNum = rand.nextInt(5);
 					boolean result = false;
 					switch(gameNum)
 					{
@@ -151,6 +153,9 @@ public class Ex02 {
 						break;
 					case 3:
 						result = main4.play();
+						break;
+					case 4:
+						result = main5.play();
 						break;
 					}
 					if(result)

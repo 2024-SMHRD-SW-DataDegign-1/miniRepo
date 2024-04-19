@@ -171,8 +171,18 @@ public class DAO {
 	 * @author 박민수
 	 * @apiNote 회원가입
 	 * @param
-	 * @return
+	 * @return 
 	 * */
+	public String signUp() {
+		
+		
+		String result = "";
+		
+		
+		
+		return result;
+	}
+	
 	
 	/**
 	 * @author 박민수

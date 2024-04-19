@@ -31,7 +31,8 @@ public class Story3 {
 		int exp = data.get(0).getExp();
 		int stress = data.get(0).getStress();
 		String time = data.get(0).getTimeline();
-		Util.showState("인턴", exp, stress, time);
+		String level = dao.RankCache();
+		Util.showState(level , stress, exp, time);
 
 		showConsole();
 

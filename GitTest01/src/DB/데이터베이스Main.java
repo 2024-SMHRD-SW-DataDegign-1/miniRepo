@@ -38,7 +38,7 @@ public class 데이터베이스Main {
 		 * */
 		
 		// 회원 등록 기능 매개변수는 사용하는곳에서 정하시면됩니다
-//		dao.signUp("닉네임");
+//		dao.signUp("user");
 		
 		// 닉네임이 있는지 없는지 비교하는 메소드
 //		System.out.println(dao.compareName("닉네임"));

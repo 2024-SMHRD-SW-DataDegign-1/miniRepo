@@ -70,13 +70,15 @@ public class DAO {
 
 	// 정보 조회
 	public ArrayList<DTO> searchUser() {
-		String sql = "SELECT U.user_id, U.exp, U.stress, U.first_time, U.last_time, U.nickname, T.timeline FROM game_user U INNER JOIN timeline T ON U.user_id = T.timeline_id";
+		String sql = "SELECT U.user_id, U.exp, U.stress, U.first_time, U.last_time, U.nickname, T.timeline FROM game_user U INNER JOIN timeline T ON U.nickname = ?";
 		ResultSet rs = null;
 		DTO dto = null;
+		String currentName = getNickname();
 		ArrayList<DTO> list = new ArrayList<DTO>();
 		try {
 			conn();
 			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, currentName);
 			rs = psmt.executeQuery();
 			while (rs.next()) {
 				int id = rs.getInt(1);
@@ -229,13 +231,13 @@ public class DAO {
 	
 	// 이름이 존재하는지 확인하는 메소드
 	public boolean compareName(String nickname) {
+		saveName(nickname);
 		String sql = "SELECT nickname FROM game_user WHERE nickname = ?";
 		int row = 0;
 		try {
 			conn();
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, nickname);
-			System.out.println("중간점검");
 			row = psmt.executeUpdate();
 		} catch (Exception e) {
 //			e.printStackTrace();
@@ -257,5 +259,45 @@ public class DAO {
 	 * @param
 	 * @return
 	 */
+	public void saveName(String nickname) {
+		String sql = "INSERT INTO save (nickname) VALUES (?)";
+		String save = nickname;
+		int row = 0;
+		try {
+			conn();
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, save);
+			row = psmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			dbClose();
+		}
+
+	}
+	
+	public String getNickname() {
+		String sql = "select * from save";
+		ResultSet rs = null;
+		String nickname = "";
+		try {
+			conn();
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			while (rs.next()) {
+				nickname = rs.getString(1);
+				// 조회해 온 결과(rs)에 담겨 있는 데이터를 DTO에 옮겨서 하나로 묶음
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			dbClose();
+		}
+		return nickname;
+	
+	
+	}
+	
+	
 
 }

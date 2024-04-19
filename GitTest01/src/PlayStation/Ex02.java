@@ -15,14 +15,15 @@ import SubGame.Story1;
 import SubGame.Story2;
 import SubGame.Story3;
 import SubGame.Story4;
+import SubGame.Story5;
 import Util.Util;
 import javazoom.jl.player.MP3Player;
 
 public class Ex02 {	
 
-   static MyThread thr = new MyThread();
+    static MyThread thr = new MyThread();
    
-	//String[] mLevel = {"인턴", "사원", };
+	String[] mLevel = {"인턴", "사원", };
 	static String[] mTime = {"출근", "오전", "점심", "오후", "퇴근"};
 	static int mTimeIdx = 0;
 	
@@ -32,16 +33,40 @@ public class Ex02 {
 	static DAO dao = new DAO();
 	static Scanner sc = new Scanner(System.in);
 	static boolean isGame = false;
+	static String[] str = 
+		{
+
+"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⢤⢄⡀⠀⠀⠀⠀⠀⠀⠀⠔⠄⣦⣦⣦⡐⢄⠢⡐⢄⠢⡐⢄⢢⣰⢴⢴⡔⢄⡢⡐⢄⠢⡐⢄⠢⡐⢄⠢⡐⢄⠢⡐⠄⠀⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+"⠀⠀⠀⠀⠀⣀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⠠⠠⠠⠸⠀⠀⠀⠀⠀⠀⠀⢅⢑⢻⢿⣿⣿⣦⣑⢌⠢⡑⢌⣦⢷⢯⣻⡽⣽⣺⡽⣽⣺⣔⢌⠢⡑⢌⠢⡑⢌⠢⡑⢌⠂⠀⠀⠀⠀⢎⢁⡉⣱⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⠄⠢⢀",
+"⠀⠀⠀⠀⡃⢁⠁⢉⠆⠀⠀⠀⠀⠀⠀⠀⠈⠒⠒⠒⠊⠀⠀⠀⠀⠀⠀⠀⡂⠢⠨⡘⣵⡿⣿⣏⠢⡑⣬⣺⢽⡽⡯⠳⠍⡓⠽⠝⣷⣻⣺⡣⡑⢌⠢⡑⢌⠢⡑⢌⠢⡁⠀⠀⠀⠀⠁⠢⠐⠐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠰⠀⠺",
+"⠀⠀⠀⠀⠢⠤⠤⠔⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⠐⠐⠐⡄⠀⠌⢌⢂⢂⢦⡿⣿⣗⡕⢌⠙⡞⡯⢋⠪⡄⠅⡂⢥⠪⢱⣻⠪⡑⢌⠢⡑⢌⠢⡑⢌⠢⡑⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠤⠤⣀⠀⠀⠀⠀⠀⠀⠁⠁⠁⠁",
+"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⠔⠒⠤⠀⠀⠀⠀⠀⢸⢈⢈⠈⠅⠀⡑⡐⡐⢌⠫⣯⣗⡷⣗⡷⡕⢌⠃⡂⢚⠚⠡⢘⠓⠨⢘⢉⠢⡈⠢⡑⢌⠢⡑⢌⠢⡑⢌⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⠠⠠⠐⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢒⠒⠒⢢⠁⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⡂⠢⡈⠢⡑⡸⣞⣯⡷⣟⣿⣢⣂⠂⡂⡈⢈⠀⡈⠨⢐⠠⡑⢌⠢⡈⠢⡑⢌⠢⡑⢌⠢⡁⠀⠀⠀⡖⠉⠋⠒⡆⠀⠀⠈⠈⠈⠈⠀⠀⠀⠀⠀⢠⠐⠄⠢⠠",
+"⠀⠀⠀⠀⣀⢀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢌⠢⡈⡂⡂⡂⡂⣷⣻⡽⣞⢗⣯⣗⣆⢐⠐⠐⡀⣕⡾⣽⢽⡽⣽⠳⣡⢈⢂⠑⢌⠢⡑⠄⠀⠀⠀⢇⣉⣉⡈⠅⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢘⠒⠒⠒⡌⠀",
+"⠀⠀⠀⣇⢁⣁⢱⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⡀⠀⠀⠀⠀⠀⠢⡑⡐⡐⡐⠄⠏⢗⢛⠨⢅⠲⠡⠕⠟⠇⠄⠅⠜⠗⠯⠫⠏⠯⠳⠣⠺⡐⠇⠌⠄⠅⠌⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡤⣄⡀⠀⠀⠀⠀⠀⠀⠀⠁⠁⠁⠁⠀",
+"⠀⠀⠀⠢⠄⠆⠌⠀⠀⠀⡠⠰⠐⠄⡄⠀⠀⠀⠀⠨⡠⠠⠨⠸⠀⠀⠀⠀⣿⡽⣽⡽⣯⣿⣿⠟⢹⠋⡫⣿⣿⣿⡿⢟⢉⢹⠋⣽⡟⢛⡿⠉⡟⠏⣉⢙⠍⣝⢽⣫⢟⡕⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠤⠄⠌⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢅⠠⠄⠀⠇⠀⠀⠀⠀⠀⠃⠂⠂⠈⠀⠀⠀⠀⡿⣝⣷⣻⣽⢾⡏⠀⠁⣾⡽⠛⠚⢻⡓⢰⠐⡆⢰⡻⠀⣳⠇⠪⠫⠀⠐⠨⢰⢵⡻⡺⣝⡅⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠁⠁⠁⠀⠀⠀⢀⣠⢤⢄⡀⠀⠀⠀",
+"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠒⠒⠊⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣟⣗⣷⣻⣺⣻⠈⣪⠀⡳⣿⣿⣿⠿⠇⠐⠲⠁⡎⡰⡄⠪⢐⡮⠋⡴⡥⡁⡮⣗⡽⣝⢮⠆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠠⠤⠠⡅⠀⠀⠀",
+"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠿⠺⢞⠾⠽⢗⠷⡻⠾⠾⠿⠾⠯⠷⠿⡻⠧⠼⠽⠿⠽⠥⠼⠭⠤⠤⠤⢜⠾⠵⠻⠪⠗⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠒⠒⠒⠂⠀⠀⠀",
+"⠀⠀⡀⡀⣐⣷⣃⢀⢀⠀⣾⡆⠀⠀⠀⠀⠠⣠⡀⠀⠀⠠⣷⡆⠀⠀⠀⢀⣴⣴⣶⣦⣀⠀⢰⣶⠂⠀⠀⠀⢠⢴⢴⣔⢦⢦⢦⢦⡄⠀⠀⠀⢰⢴⣔⡴⠀⠀⢐⢴⡢⠀⠀⠀⠀⢀⣀⣀⣀⣀⢠⣠⡀⣄⣄⠀⡀⣠⣠⣀⡀⠀⢠⣠⡄⠀",
+"⠀⠀⠛⠛⡛⣛⡛⠛⠛⠀⣿⡇⠀⠀⠀⠀⠨⣿⠆⠀⠀⠐⣿⡇⠀⠀⠀⣽⣟⠀⠀⢹⣿⠆⢨⣿⠂⠀⠀⠀⣳⣫⡃⠉⠉⠉⢉⣗⣟⠄⠀⢀⢯⣳⠱⡯⡇⡶⣖⡯⣇⠀⠀⠀⠀⠸⠿⠿⣿⣿⢸⣿⡇⣿⣿⢠⣾⡿⠛⠿⣿⣆⢘⣿⣏⠀",
+"⠀⠀⢠⣾⠿⠛⠻⣿⡄⠀⣿⡇⠀⠀⠀⠀⣸⣿⡇⠀⠀⢈⣿⣇⣀⡀⠀⠈⠻⠿⠿⠟⡋⡀⢨⣿⠂⠀⠀⠀⠘⠮⠯⠻⠻⠫⠗⠗⠃⠀⠀⡼⣝⠎⠀⢯⢯⡍⢈⡯⡖⠀⠀⠀⠀⠂⠠⠀⣿⣿⣸⣿⡇⣿⣯⠘⣿⣧⣤⣼⣿⠗⢘⣿⡧⠐⠀",
+"⠀⠀⠸⣿⣤⣀⣔⣿⠇⠀⣿⡇⠀⠀⠀⢠⣾⠿⣿⡄⠀⠠⣿⡟⠙⠀⠹⠿⠻⠻⣿⡟⠻⠻⢘⣿⡁⠀⠀⢸⣳⣳⡳⡽⣮⣳⢽⢮⢗⣗⠐⠙⠝⢀⢀⠘⡓⡑⡐⠝⠣⠀⠀⠀⠀⡁⠀⢢⣿⡿⢻⣿⡇⣿⣯⠀⣈⣛⣛⣛⣁⣐⣘⣻⡓⠀⠀",
+"⠀⠀⠀⠈⢙⣿⠏⠁⠀⠀⣿⡇⠀⠠⢼⡿⠋⠀⠙⢿⡧⠐⣿⡇⠀⠀⠀⠀⣤⡄⣿⡇⠽⠿⢿⣿⠄⠀⠀⠀⢤⣺⡺⡥⡦⡴⡽⡽⣤⠀⠀⢀⡾⡵⣫⢯⡳⡯⣞⢯⡆⠀⠀⠀⠀⢄⣂⣾⡿⠃⢸⣿⡇⣿⣟⠀⢼⣿⠿⠿⠿⠿⢿⣿⡧⠈⠀",
+"⠀⠼⠾⢾⢶⠿⡷⠷⠿⠗⣽⡇⠀⠀⠈⠀⠀⠀⠀⠀⠀⠨⣿⡇⠀⠀⠀⠀⣿⣇⣉⣀⣀⣀⣀⣉⡀⠀⠀⠀⠉⠊⠉⠉⠉⠉⠙⣞⣵⠀⠀⠸⣺⣣⡤⡤⡤⡤⡤⣟⠮⠀⠀⠀⠀⡘⠿⠛⠁⠠⢸⣿⡇⣿⡿⠀⢺⣿⣷⣶⣶⣶⣶⣿⣗⠀⠀",
+"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠿⠇⠀⠀⠀⠀⠛⠛⠛⠛⠛⠛⠛⠛⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠛⠚⠀⠀⠀⠑⠓⠙⠙⠙⠙⠙⠊⠁⠀⠀⠀⠀⠄⠐⠀⠁⠠⠀⠄⠀⠁⠉⠀⠉⠈⠁⠉⠉⠉⠉⠉⠀⠐⠀⠀",
+};
 	public static void main(String[] args) {
 		Util.setEncoding();
 		ClearConsole();
-		thr.start();
+		thr.run();
 		
 		Random rand = new Random();
 		Story1 story1 = new Story1();
 		Story2 story2 = new Story2();
 		Story3 story3 = new Story3();
 		Story4 story4 = new Story4();
+		Story5 story5 = new Story5();
 		
 		SentenceGame main1 = new SentenceGame();
 		UpDown main2 = new UpDown();
@@ -53,6 +78,15 @@ public class Ex02 {
 		{
 			if(!isGame)
 			{
+				
+				Util.guideLine();
+				String[] value = Util.setMiddle(str);
+				
+				Util.print(value);
+				
+	            
+				Util.guideLine();
+
 				Util.println("1. 게임 시작 \t 2.종료");
 				int choice = sc.nextInt();
 				if(choice == 1)
@@ -60,7 +94,9 @@ public class Ex02 {
 					isGame = true;
 				}
 				else if(choice == 2)
-				{  thr.stop();
+				{  
+
+					//thr = null;
 					break;
 				}
 				else
@@ -75,7 +111,7 @@ public class Ex02 {
 				if(mTimeIdx == 0 || mTimeIdx == 2 || mTimeIdx == 4)
 				{
 					// 서브 이벤트
-					int gameNum = rand.nextInt(4);
+					int gameNum = rand.nextInt(5);
 					switch(gameNum)
 					{
 					case 0:
@@ -89,6 +125,9 @@ public class Ex02 {
 						break;
 					case 3:
 						story4.play();
+						break;
+					case 4:
+						story5.play();
 						break;
 					}
 					isContinue();
@@ -128,6 +167,7 @@ public class Ex02 {
 			}
 
 		}
+		thr.Pause();
 		
 	}
 	
@@ -206,6 +246,7 @@ public class Ex02 {
 			e.printStackTrace();
 		}
 	}
+
 }
 
 

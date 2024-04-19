@@ -13,13 +13,12 @@ import java.nio.charset.Charset;
 
 public class SentenceGame {
 	String[] mAnswerList = {
-			"답안지",
-			"빈부강약을 막론하고 일하지 않는 자를 배척하라.",
-			"화가나면 열을 세어라. 풀리지 않는다면 백을 세어라",
-			"전쟁에선 어느편이 스스로를 승자라고 부를지라도 승리자는 없고 모두 패배자 뿐이다.",
-			"일 잘하는 사람에게는 못 쓸 땅이 없다.",
-			"내 몸이 중이면 중의 행세를 하라.",
-			"아이들에게 비평보다도 귀감이 필요하다."
+			"love",
+			"Life itself is a quotation.",
+			"Music has charms to soothe a savage breast.",
+			"One lives but once in the world.",
+			"I' never going back the past is in the past.",
+			"You can't have your cake and eat it.",
 	};
 	
 	Scanner mSc;
@@ -83,15 +82,18 @@ public class SentenceGame {
 		
 		Util.println("문장 : " + mAnswerList[idx]);
 		
-		Util.println("입력 : ");
-		String value = mSc.next();
+		Util.print("입력 : ");
+		String value = mSc.nextLine();
 		
 		if(!mAnswerList[idx].equals(value))
 		{
 			mLife--;
-			
+			showResult("땡!");
 		}
-		Util.print("남은 목숨 : " + mLife);
+		else
+		{
+			showResult("정답!");
+		}
 		Delay(2000);
     }
     
@@ -130,6 +132,11 @@ public class SentenceGame {
 		System.out.println();
 		System.out.println();
 		Util.guideLine();
+    }
+    
+    private void showResult(String result)
+    {
+    	Util.print(result +" 남은 목숨 : " + mLife);
     }
     
 	public void Delay(int MilTime)

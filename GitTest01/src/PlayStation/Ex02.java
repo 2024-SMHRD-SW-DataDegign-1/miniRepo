@@ -192,7 +192,7 @@ public class Ex02 {
 					// 메인 이벤트
 					int gameNum = rand.nextInt(4);
 					boolean result = false;
-					switch(0)
+					switch(gameNum)
 					{
 					case 0:
 						result = main1.Play();

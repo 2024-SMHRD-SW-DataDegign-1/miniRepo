@@ -138,6 +138,13 @@ public class Ex02 {
 				int choice = sc.nextInt();
 				if(choice == 1)
 				{ 		
+					boolean isName1 = dao.compareName("");;
+					if(!isName1)
+					{
+						Util.println("닉네임을 등록해주세요!");
+					}
+					Delay(2000);
+						
 					ClearConsole();
 					Util.guideLine();
 					System.out.println();

@@ -12,6 +12,7 @@ import java.util.ArrayList;
 // DB에 관련된 기능들을 전부 가지고 있는 클래스
 public class DAO {
 	PreparedStatement psmt = null;
+	PreparedStatement psmt2 = null;
 	Connection conn = null;
 
 	// DB 연결
@@ -86,7 +87,7 @@ public class DAO {
 				String nickname = rs.getString(6);
 				String timeline = rs.getString(7);
 				// 조회해 온 결과(rs)에 담겨 있는 데이터를 DTO에 옮겨서 하나로 묶음
-				dto = new DTO(id, exp, stress, firstTime, lastTime, nickname);
+				dto = new DTO(id, exp, stress, firstTime, lastTime, nickname, timeline);
 				list.add(dto);
 			}
 		} catch (Exception e) {
@@ -101,7 +102,7 @@ public class DAO {
 		}
 		return list;
 	}
-	
+
 	// 직급 불러오는 메소드
 	public String RankCache() {
 		String sql = "select exp from game_user";
@@ -124,28 +125,27 @@ public class DAO {
 		} else {
 			// System.out.println("조회 실패!😢");
 		}
-        if (exp >= 0 && exp < 100) {
-            return "인턴";
-        } else if (exp >= 100 && exp < 200) {
-            return "사원";
-        } else if (exp >= 200 && exp < 300) {
-            return "대리";
-        } else if (exp >= 300 && exp < 400) {
-            return "부장";
-        } else if(exp >= 400 && exp < 99900 ) {
-        	return "사장";
-        }
-        else {
-            return "백수";
-        }
+		if (exp >= 0 && exp < 100) {
+			return "인턴";
+		} else if (exp >= 100 && exp < 200) {
+			return "사원";
+		} else if (exp >= 200 && exp < 300) {
+			return "대리";
+		} else if (exp >= 300 && exp < 400) {
+			return "부장";
+		} else if (exp >= 400 && exp < 99900) {
+			return "사장";
+		} else {
+			return "백수";
+		}
 	}
-	
+
 	/**
 	 * @author 박민수
 	 * @param String => "출근", "오전", "점심", "오후", "퇴근"
 	 * @apiNote 입력한 파라미터를 DB에 저장
-	 * @return 리턴값 없음 
-	 * */
+	 * @return 리턴값 없음
+	 */
 	public void updateTime(String timeline) {
 		String sql = "UPDATE timeline SET timeline = ?";
 		int row = 0;
@@ -159,35 +159,103 @@ public class DAO {
 		} finally {
 			dbClose();
 		}
-		if(row > 0) {
+		if (row > 0) {
 			// System.out.println("타임라인 수정 성공!");
 		} else {
 			// System.out.println("타임라인 수정 실패!");
 		}
 	}
-	
 
 	/**
 	 * @author 박민수
-	 * @apiNote 회원가입
+	 * @apiNote 인덱스 검색
 	 * @param
-	 * @return 
-	 * */
-	public String signUp() {
-		
-		
-		String result = "";
-		
-		
-		
-		return result;
+	 * @return
+	 */
+	public int idx() {
+		int idx = 0;
+		String sql = "SELECT * FROM game_user";
+		ResultSet rs = null;
+		try {
+			conn();
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			while (rs.next()) {
+				idx++;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			dbClose();
+		}
+		return idx;
 	}
+	
+    /**
+     * @author 박민수
+     * @param nickname(닉네임)
+     * @apiNote 회원가입 기능
+     * @return 없음
+     * 
+     * */
+	public void signUp(String nickname) {
+		int user_id = idx() + 1;
+		String sql = "INSERT INTO game_user (user_id, exp, stress, first_time, last_time, nickname) VALUES (?, 0, 0, sysdate, sysdate, ?)";
+		String sql2 = "INSERT INTO timeline (timeline_id, timeline) VALUES (?, ?)";
+		int row = 0;
+		int row2 = 0;
+		try {
+			conn();
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, user_id);
+			psmt.setString(2, nickname);
+			row = psmt.executeUpdate();
+			
+			psmt2 = conn.prepareStatement(sql2);
+			psmt2.setInt(1, user_id);
+			psmt2.setString(2, "출근");
+			row2 = psmt2.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			dbClose();
+		}
+		if (row > 0 || row2 > 0) {
+			System.out.println("등록 성공!");
+		} else {
+			System.out.println("등록 실패!");
+		}
+	}
+	
+	// 이름이 존재하는지 확인하는 메소드
+	public boolean compareName(String nickname) {
+		String sql = "SELECT nickname FROM game_user WHERE nickname = ?";
+		int row = 0;
+		try {
+			conn();
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, nickname);
+			System.out.println("중간점검");
+			row = psmt.executeUpdate();
+		} catch (Exception e) {
+//			e.printStackTrace();
+		} finally {
+			dbClose();
+		}
+		if (row > 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
 	
 	
 	/**
 	 * @author 박민수
-	 * @apiNote 로그인 (select )
+	 * @apiNote 현재 사용자 저장
 	 * @param
 	 * @return
-	 * */
+	 */
+
 }

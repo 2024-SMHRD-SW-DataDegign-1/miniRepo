@@ -32,6 +32,7 @@ public class SentenceGame {
 	
 	public boolean Play()
 	{
+		mLife = 5;
 		boolean result = true;
 		DAO dao = new DAO();
 		System.out.println();
@@ -48,13 +49,14 @@ public class SentenceGame {
 			
 			System.out.println();
 			playGame(i);
+			ClearConsole();
 			if(mLife == 0)
 			{
 				result = false;
 				break;
 			}
 			
-			ClearConsole();
+
 		}
 
 		

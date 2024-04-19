@@ -17,11 +17,13 @@ public class 가위바위보 {
 	int Life;
 
 	public 가위바위보() {
-		Life = 3;
+		
 	}
 
 	public boolean play() {
-
+		
+		Life = 3;
+		
 		DAO dao = new DAO();
 
 		ArrayList<DTO> data = dao.searchUser();

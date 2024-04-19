@@ -29,6 +29,10 @@ public class 가위바위보 {
 		// 경험치
 		int exp = data.get(0).getExp();
 		int stress = data.get(0).getStress();
+		Date firstTime = data.get(0).getFirstTime();
+		Date lastTime = data.get(0).getLastTime();
+		String timeline = data.get(0).getTimeline();
+
 
 		// 출력문 입력
 		// result는 최종 결과 값
@@ -37,7 +41,7 @@ public class 가위바위보 {
 		// else if 문을 사용하여 하나의 경우의수를 출력하여 모든 경우의 수를 출력
 		for (int i = 0; i < 3; i++) {
 
-			Util.showState(dao.RankCache(), stress, exp);
+			Util.showState(dao.RankCache(), stress, exp , timeline);
 			// 아스키 코드 입력
 			Util.guideLine();
 			String[] str = {

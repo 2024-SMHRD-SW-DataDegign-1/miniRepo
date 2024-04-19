@@ -18,8 +18,12 @@ public class Story1 {
 		// 경험치
 		int exp = data.get(0).getExp();
 		int stress = data.get(0).getStress();
+		Date firstTime = data.get(0).getFirstTime();
+		Date lastTime = data.get(0).getLastTime();
+		String timeline = data.get(0).getTimeline();
 
-		Util.showState(dao.RankCache(), stress, exp);
+
+		Util.showState(dao.RankCache(), stress, exp , timeline);
 		// 아스키 코드 입력
 		Util.guideLine();
 		String[] str = { 

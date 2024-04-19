@@ -37,9 +37,9 @@ public class UpDown {
 	        		int stress = data.get(0).getStress();
 	        		Date firstTime = data.get(0).getFirstTime();
 	        		Date lastTime = data.get(0).getLastTime();
-	        	  
+	        		
 	        	  	            
-	            Util.showState(dao.RankCache(),stress, exp);
+	               Util.showState(dao.RankCache(),stress, exp);
 	         
 	         //아스키코드
 	            

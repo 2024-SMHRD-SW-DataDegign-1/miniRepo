@@ -312,6 +312,10 @@ public class Ex02 {
 		{
 			num = 0;
 		}
+		if(stress >= 100)
+		{
+			stress -= 100;
+		}
 		dao.updateUser(num, stress);
 	}
 	

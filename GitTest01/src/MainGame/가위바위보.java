@@ -69,8 +69,6 @@ public class 가위바위보 {
 
 			Util.print(value);
 			
-            System.out.println();
-            System.out.println();
             
 			Util.guideLine();
 
@@ -95,11 +93,14 @@ public class 가위바위보 {
 			Util.println("과장님의 선택 : " + computerGesture);
 			if (user == computer + 1) {
 				Util.println("과장님이랑 비겼습니다 휴.... -.-");
+				
 			} else if ((user == 1 && computer == 2) || (user == 2 && computer == 0) || (user == 0 && computer == 1)) {
 				Util.println("내가 과장님을 이겼다! --- ^.^");
+				
 			} else {
 				Util.println("과장님한테 졌다... ㅠ.ㅠ");
 				Life -= 1;
+				
 			}
 			if (Life == 0) {
 				result = false;

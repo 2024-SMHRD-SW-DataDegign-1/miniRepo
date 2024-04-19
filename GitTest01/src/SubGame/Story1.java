@@ -53,9 +53,6 @@ public class Story1 {
 
 		Util.print(value);
 
-		System.out.println();
-		System.out.println();
-
 		Util.guideLine();
 
 		Scanner sc = new Scanner(System.in);

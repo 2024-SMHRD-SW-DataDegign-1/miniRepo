@@ -37,19 +37,12 @@ public class UpDown {
 	        		int stress = data.get(0).getStress();
 	        		Date firstTime = data.get(0).getFirstTime();
 	        		Date lastTime = data.get(0).getLastTime();
-<<<<<<< HEAD
-	        		
-=======
 	        		String timeline = data.get(0).getTimeline();
->>>>>>> branch 'main' of https://github.com/2024-SMHRD-SW-DataDegign-1/miniRepo.git
-	        	  	            
-<<<<<<< HEAD
-	               Util.showState(dao.RankCache(),stress, exp);
-=======
-	            Util.showState(dao.RankCache(),stress, exp,timeline);
->>>>>>> branch 'main' of https://github.com/2024-SMHRD-SW-DataDegign-1/miniRepo.git
+	        		
+               Util.showState(dao.RankCache(),stress, exp,timeline);
+
 	         
-	         //아스키코드
+               //아스키코드
 	            
 	   Util.guideLine();
 	   String[] str =

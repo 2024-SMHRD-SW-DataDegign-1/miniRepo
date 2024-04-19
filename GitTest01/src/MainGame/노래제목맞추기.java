@@ -3,10 +3,13 @@ package MainGame;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 //import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
+import DB.DAO;
+import DB.DTO;
 import Util.Util;
 
 public class 노래제목맞추기 {
@@ -44,7 +47,14 @@ public class 노래제목맞추기 {
 	
 	
 	public boolean play() {
-
+		DAO dao = new DAO();
+		ArrayList<DTO> data = dao.searchUser();
+		// 경험치
+		int exp = data.get(0).getExp();
+		int stress = data.get(0).getStress();
+		String level = dao.RankCache();
+		String time = data.get(0).getTimeline();
+		Util.showState(level,stress, exp, time);
 		showConsole();
 
 		// 승패 여부를 저장할 변수
@@ -98,6 +108,7 @@ public class 노래제목맞추기 {
 					life--;
 					Util.println("틀렸습니다. 남은 목숨: " + life);
 					if (life == 0) {
+						Delay(2000);
 						return isCorrect;
 					}
 					currentLyricIndex++;
@@ -110,10 +121,23 @@ public class 노래제목맞추기 {
 				}
 			}
 		}
-
+		
 		return isCorrect;
 	}
 
+	public void Delay(int MilTime)
+	{
+		try
+		{
+			Thread.sleep(MilTime);
+			
+		}
+		catch(InterruptedException  e)
+		{
+			e.printStackTrace();
+		}
+	}
+	
 	public int[] ranNum() {
 		// 1. 랜덤 도구 꺼내오기
 
@@ -174,6 +198,7 @@ public class 노래제목맞추기 {
 
 		Util.print(value1);
 
+		System.out.println();
 		System.out.println();
 		System.out.println();
 		System.out.println();

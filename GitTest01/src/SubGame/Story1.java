@@ -68,13 +68,13 @@ public class Story1 {
 		case 1:
 			Util.println("경험치 증가! 하지만 나의 스트레스는 쌓인다.. -.-zzz");
 			// 경험치는 증가하지만 스트레스 증가
-			dao.updateUser(exp + 20, stress + 20);
+			dao.updateUser(exp + 20, stress+20);
 			break;
 
 		case 2: 
 			Util.println("가기 싫은 등산은 피했지만 부장님의 표정이 좋지 않다..");
 			// 경험치는 변화 없지만 스트레스 감소
-			dao.updateUser(exp, stress - 20);
+			dao.updateUser(exp, stress);
 			break;
 			
 		}Delay(2000);

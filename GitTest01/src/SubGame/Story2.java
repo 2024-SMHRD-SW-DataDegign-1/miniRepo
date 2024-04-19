@@ -74,9 +74,9 @@ Util.guideLine();
 			
 		switch (choice) {
 		case 1:
-			Util.println("경험치 증가! 하지만 나의 스트레스는 쌓인다.. -.-zzz");
+			Util.println("경험치 증가! ^.^");
 			// 경험치는 증가하지만 스트레스 증가
-			dao.updateUser(exp + 20, stress + 20);
+			dao.updateUser(exp + 20, stress);
 			break;
 		
 		case 2: 

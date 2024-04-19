@@ -68,7 +68,7 @@ public class Story5 {
 		switch (choice) {
 		case 1:
 			Util.println("다행이다.. 한소리 들을 줄 알았는데 같이 도와주시네 ^.^");
-			dao.updateUser(exp + 20, stress - 20);
+			dao.updateUser(exp + 20, stress);
 			break;
 
 		case 2:

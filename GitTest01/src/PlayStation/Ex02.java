@@ -15,6 +15,7 @@ import SubGame.Story1;
 import SubGame.Story2;
 import SubGame.Story3;
 import SubGame.Story4;
+import SubGame.Story5;
 import Util.Util;
 import javazoom.jl.player.MP3Player;
 
@@ -42,6 +43,7 @@ public class Ex02 {
 		Story2 story2 = new Story2();
 		Story3 story3 = new Story3();
 		Story4 story4 = new Story4();
+		Story5 story5 = new Story5();
 		
 		SentenceGame main1 = new SentenceGame();
 		UpDown main2 = new UpDown();
@@ -91,6 +93,9 @@ public class Ex02 {
 						break;
 					case 3:
 						story4.play();
+						break;
+					case 4:
+						story5.play();
 						break;
 					}
 					isContinue();

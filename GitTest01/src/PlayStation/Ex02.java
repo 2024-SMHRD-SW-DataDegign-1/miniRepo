@@ -243,7 +243,7 @@ public class Ex02 {
 				else
 				{
 					// 메인 이벤트
-					int gameNum = rand.nextInt(5);
+					int gameNum = rand.nextInt(4);
 					boolean result = false;
 					switch(gameNum)
 					{
@@ -299,7 +299,6 @@ public class Ex02 {
 				System.out.println();
 				System.out.println();
 				System.out.println();
-				Util.setMiddle(args);
 				Util.print(str12);
 				Util.print(str13);
 				System.out.println();

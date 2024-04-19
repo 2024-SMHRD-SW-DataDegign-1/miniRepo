@@ -20,7 +20,7 @@ import javazoom.jl.player.MP3Player;
 
 public class Ex02 {	
 
-   static MyThread thr = new MyThread();
+    static MyThread thr = new MyThread();
    
 	String[] mLevel = {"인턴", "사원", };
 	static String[] mTime = {"출근", "오전", "점심", "오후", "퇴근"};
@@ -35,7 +35,7 @@ public class Ex02 {
 	public static void main(String[] args) {
 		Util.setEncoding();
 		ClearConsole();
-		thr.start();
+		thr.run();
 		
 		Random rand = new Random();
 		Story1 story1 = new Story1();
@@ -60,7 +60,9 @@ public class Ex02 {
 					isGame = true;
 				}
 				else if(choice == 2)
-				{  thr.stop();
+				{  
+
+					//thr = null;
 					break;
 				}
 				else
@@ -128,6 +130,7 @@ public class Ex02 {
 			}
 
 		}
+		thr.Pause();
 		
 	}
 	
